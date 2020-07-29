@@ -1,6 +1,5 @@
 import { Component, OnInit, Input, OnChanges, Output } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { OuterSubscriber } from 'rxjs/internal/OuterSubscriber';
 
 @Component({
   selector: 'app-searched-movie',
@@ -35,20 +34,21 @@ export class SearchedMovieComponent implements OnInit, OnChanges {
             this.showResults = true;
           }
         });
-    }else if(this.searchFeature['feature'] == 'search-title'){
+    } else if (this.searchFeature['feature'] == 'search-title') {
       this.http
-      .get(
-        `https://api.themoviedb.org/3/search/movie?&api_key=8fa93c9b6c348f8a5cdc2ac737953f7d&query=${this.searchFeature['searchedTitle']}`
-      )
-      .subscribe((resp) => {
-        if (resp) {
-          console.log("Fetched search");
-          this.movies = resp["results"];
-          this.pageTitle = "Showing results for: " + this.searchFeature['searchedTitle'];
-          this.showDetails = false;
-          this.showResults = true;
-        }
-      });
+        .get(
+          `https://api.themoviedb.org/3/search/movie?&api_key=8fa93c9b6c348f8a5cdc2ac737953f7d&query=${this.searchFeature['searchedTitle']}`
+        )
+        .subscribe((resp) => {
+          if (resp) {
+            console.log('Fetched search');
+            this.movies = resp['results'];
+            this.pageTitle =
+              'Showing results for: ' + this.searchFeature['searchedTitle'];
+            this.showDetails = false;
+            this.showResults = true;
+          }
+        });
     }
   }
 

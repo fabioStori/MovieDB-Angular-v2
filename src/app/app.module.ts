@@ -10,6 +10,7 @@ import { HeaderComponent } from './header/header.component';
 import { SearchedMovieComponent } from './searched-movie/searched-movie.component';
 import { MovieDetailsComponent } from './searched-movie/movie-details/movie-details.component';
 import { FooterComponent } from './footer/footer.component';
+import { MovieSimilarComponent } from './searched-movie/movie-details/movie-similar/movie-similar.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { FooterComponent } from './footer/footer.component';
     SearchedMovieComponent,
     MovieDetailsComponent,
     FooterComponent,
+    MovieSimilarComponent,
   ],
   imports: [BrowserModule, FormsModule, HttpClientModule],
   providers: [],
