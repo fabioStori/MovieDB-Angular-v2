@@ -1,4 +1,4 @@
-<div class="col-md-6">
+<div class="col-md-3">
   <div class="searched-container">
     <div class="searched-box">
       <h3 class="page-title">
@@ -7,13 +7,17 @@
       <button
         class="btn btn-secundary searched-movies"
         *ngFor="let movie of movies"
-        (click)="onDetailsClicked(movie)"
+        (click)="chosenMovie = movie"
+        (click)="showDetails = true"
       >
         {{ movie.title }}
       </button>
     </div>
   </div>
 </div>
-<div class="col-md-6">
-  <app-movie-details *ngIf="showDetails" [movieDetails]="chosenMovie"></app-movie-details>
+<div class="col-md-9">
+  <app-movie-details
+    *ngIf="showDetails"
+    [movieDetails]="chosenMovie"
+  ></app-movie-details>
 </div>

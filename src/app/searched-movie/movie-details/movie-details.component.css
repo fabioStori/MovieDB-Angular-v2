@@ -1,7 +1,11 @@
-.row {
-  padding: 20px 0px;
+.col-md-8, .col-md-4 {
+  padding: 10px 0px;
 }
 
+.card {
+  width: 100%;
+  text-align: center;
+}
 .card .div-img {
   text-align: center;
 }
