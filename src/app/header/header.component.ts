@@ -10,19 +10,19 @@ export class HeaderComponent implements OnInit {
     title: string;
   }>();
 
-  @Output() headerFeature = new EventEmitter<string>();
+  @Output() headerFeature = new EventEmitter<{feature:string, searchedTitle:string}>();
 
   constructor() {}
 
   ngOnInit(): void {}
 
-  onSearch(searchedMovie: HTMLInputElement) {
-    this.searchClicked.emit({
-      title: searchedMovie.value,
-    });
-  }
+  // onSearchClick(searchedMovie: HTMLInputElement) {
+  //   this.searchClicked.emit({
+  //     title: searchedMovie.value,
+  //   });
+  // }
 
-  headerFeatureClicked(feature: string) {
-    this.headerFeature.emit(feature);
+  headerFeatureClicked(feature: string, searchedTitle:string) {
+    this.headerFeature.emit({feature, searchedTitle});
   }
 }

@@ -6,11 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  headerFeature:string = "";
+  headerFeature = {};
   showResults:boolean = false;
 
-  headerFeatureClicked(feature:string){
-    this.headerFeature = feature
+  headerFeatureClicked(event){
+    console.log(event)
+    this.headerFeature = event
     this.showResults = true
   }
 
