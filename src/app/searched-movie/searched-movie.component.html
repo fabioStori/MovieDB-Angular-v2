@@ -1,0 +1,19 @@
+<div class="col-md-6">
+  <div class="searched-container">
+    <div class="searched-box">
+      <h3 class="page-title">
+        {{ pageTitle }}
+      </h3>
+      <button
+        class="btn btn-secundary searched-movies"
+        *ngFor="let movie of movies"
+        (click)="onDetailsClicked(movie)"
+      >
+        {{ movie.title }}
+      </button>
+    </div>
+  </div>
+</div>
+<div class="col-md-6">
+  <app-movie-details *ngIf="showDetails" [movieDetails]="chosenMovie"></app-movie-details>
+</div>

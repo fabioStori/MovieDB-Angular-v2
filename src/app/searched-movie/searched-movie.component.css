@@ -1,0 +1,35 @@
+.searched-container {
+  width: 90%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.col-md-6 .page-title {
+  font-weight: bold;
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+  border-radius: 5px;
+}
+.col-md-6 .page-title:hover {
+  opacity: 1;
+  transition: 0.3s;
+  background-color: #ffa600;
+}
+.col-md-6 .searched-movies:hover {
+  opacity: 1;
+  transition: 0.3s;
+  background-color: #ffa600;
+}
+
+.searched-box {
+  text-align: left;
+  margin: 0px;
+  padding: 0px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  float: left;
+  text-align: center;
+}
+
+/*# sourceMappingURL=searched-movie.component.css.map */

@@ -6,5 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'MovieDB-Angular-v2';
+  headerFeature:string = "";
+  showResults:boolean = false;
+
+  headerFeatureClicked(feature:string){
+    this.headerFeature = feature
+    this.showResults = true
+  }
+
 }

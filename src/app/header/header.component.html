@@ -1,0 +1,17 @@
+<div class="header">
+  <nav class="navbar navbar-light bg-light">
+    <h1 class="page-name" (click)="headerFeatureClicked('popular-movies')">Popular Movies</h1>
+    <input
+      type="text"
+      class="form-control mr-sm-2"
+      placeholder="Movie Title"
+      #searchedTitle
+    />
+    <button
+      class="btn btn-outline-success my-2 my-sm-0"
+      (click)="onSearch(searchedTitle)"
+    >
+      Search
+    </button>
+  </nav>
+</div>

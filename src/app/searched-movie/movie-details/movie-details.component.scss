@@ -1,0 +1,18 @@
+@import "../../variables";
+@import "../../mixins";
+
+.row{
+  padding: 20px 0px;
+}
+
+.card {
+  // @include mQ(1250px) {
+  //   width: 100%;
+  // }
+  .div-img {
+    text-align: center;
+    img {
+      width: 50%;
+    }
+  }
+}

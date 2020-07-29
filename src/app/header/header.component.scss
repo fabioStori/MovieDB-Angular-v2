@@ -1,0 +1,38 @@
+@import "../variables";
+@import "../mixins";
+
+.header {
+  font-family: Arial;
+  background-color: $headerBlue;
+  margin: 0px;
+  padding: 10px;
+  text-align: center;
+
+  .page-name {
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    font-size: 40px;
+    padding-right: 5%;
+    padding-left: 5%;
+    @include hoverTitle;
+    @include mQ(1000px) {
+      width: 100%;
+      text-align: center;
+    }
+  }
+  .form-control {
+    width: 30%;
+    float: right;
+    @include mQ(1000px) {
+      width: 80%;
+    }
+  }
+  .btn {
+    width: 20%;
+    float: left;
+    @include mQ(1000px) {
+      width: 15%;
+    }
+  }
+}

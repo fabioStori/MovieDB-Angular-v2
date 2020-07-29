@@ -1,0 +1,12 @@
+.row {
+  padding: 20px 0px;
+}
+
+.card .div-img {
+  text-align: center;
+}
+.card .div-img img {
+  width: 50%;
+}
+
+/*# sourceMappingURL=movie-details.component.css.map */

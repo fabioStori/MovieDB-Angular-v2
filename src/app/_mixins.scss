@@ -1,0 +1,18 @@
+
+// Mixins...
+
+@mixin hoverTitle {
+  &:hover {
+    opacity: 1;
+    transition: 0.3s;
+    background-color: complement($color: $headerBlue);
+  }
+}
+
+@mixin mQ($arg) {
+  @if length($arg) == 1 {
+    @media screen and (max-width: nth($arg, 1)) {
+      @content;
+    }
+  }
+}

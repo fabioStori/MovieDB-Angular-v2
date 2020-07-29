@@ -1,0 +1,46 @@
+.header {
+  font-family: Arial;
+  background-color: #0059ff;
+  margin: 0px;
+  padding: 10px;
+  text-align: center;
+}
+.header .page-name {
+  font-weight: bold;
+  text-align: center;
+  cursor: pointer;
+  font-size: 40px;
+  padding-right: 5%;
+  padding-left: 5%;
+}
+.header .page-name:hover {
+  opacity: 1;
+  transition: 0.3s;
+  background-color: #ffa600;
+}
+@media screen and (max-width: 1000px) {
+  .header .page-name {
+    width: 100%;
+    text-align: center;
+  }
+}
+.header .form-control {
+  width: 30%;
+  float: right;
+}
+@media screen and (max-width: 1000px) {
+  .header .form-control {
+    width: 80%;
+  }
+}
+.header .btn {
+  width: 20%;
+  float: left;
+}
+@media screen and (max-width: 1000px) {
+  .header .btn {
+    width: 15%;
+  }
+}
+
+/*# sourceMappingURL=header.component.css.map */
