@@ -1,16 +1,17 @@
-.col-md-7,
-.col-md-5 {
-  padding: 10px 0px;
+.row {
+  padding: 0;
 }
-
-.card {
+.row .col-md-9 {
+  padding: 0;
+}
+.row .col-md-9 .card {
   width: 100%;
   text-align: center;
 }
-.card .div-img {
+.row .col-md-9 .card .div-img {
   text-align: center;
 }
-.card .div-img img {
+.row .col-md-9 .card .div-img img {
   width: 40%;
 }
 

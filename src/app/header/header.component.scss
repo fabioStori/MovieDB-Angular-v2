@@ -1,6 +1,8 @@
 @import "../variables";
 @import "../mixins";
 
+//sass --watch src/app/header/header.component.scss src/app/header/header.component.css
+
 .header {
   font-family: Arial;
   background-color: $headerBlue;
@@ -8,18 +10,31 @@
   padding: 10px;
   text-align: center;
 
-  .page-name {
+  .h1{
+    border-radius: 5px;
+    border: 1px;
+  }
+
+  .home {
     font-weight: bold;
     text-align: center;
     cursor: pointer;
     font-size: 40px;
     padding-right: 5%;
     padding-left: 5%;
+    border-radius: 10px;
     @include hoverTitle;
     @include mQ(1000px) {
       width: 100%;
       text-align: center;
     }
+  }
+
+  .popular-movies{
+    border-radius: 10px;
+    padding: 10px;
+    cursor: pointer;
+    @include hoverTitle;
   }
   .form-control {
     width: 30%;

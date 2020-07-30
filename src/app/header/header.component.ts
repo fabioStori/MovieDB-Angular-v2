@@ -1,4 +1,5 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -10,9 +11,12 @@ export class HeaderComponent implements OnInit {
     title: string;
   }>();
 
-  @Output() headerFeature = new EventEmitter<{feature:string, searchedTitle:string}>();
+  @Output() headerFeature = new EventEmitter<{
+    feature: string;
+    searchedTitle: string;
+  }>();
 
-  constructor() {}
+  constructor(private router: Router) {}
 
   ngOnInit(): void {}
 
@@ -22,7 +26,9 @@ export class HeaderComponent implements OnInit {
   //   });
   // }
 
-  headerFeatureClicked(feature: string, searchedTitle:string) {
-    this.headerFeature.emit({feature, searchedTitle});
+  headerFeatureClicked(feature: string, searchedTitle: string) {
+    this.headerFeature.emit({ feature, searchedTitle });
+    if (feature === 'popular-movies') this.router.navigate(['/pop-movies']);
+    else if (feature === 'home') this.router.navigate(['']);
   }
 }

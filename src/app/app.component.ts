@@ -11,6 +11,7 @@ export class AppComponent {
 
   headerFeatureClicked(event) {
     this.headerFeature = event;
-    this.showResults = true;
+    if (event.feature === 'home') this.showResults = false;
+    else this.showResults = true;
   }
 }

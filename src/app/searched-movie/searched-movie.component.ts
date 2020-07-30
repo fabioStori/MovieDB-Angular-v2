@@ -16,10 +16,29 @@ export class SearchedMovieComponent implements OnInit, OnChanges {
 
   constructor(private http: HttpClient) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    console.log('Searching popular movies');
+    this.http
+      .get(
+        'https://api.themoviedb.org/3/discover/movie?api_key=8fa93c9b6c348f8a5cdc2ac737953f7d&sort_by=popularity.desc'
+      )
+      .subscribe((resp) => {
+        if (resp) {
+          console.log('Fetched popular movies');
+          this.movies = resp['results'];
+          this.pageTitle = 'Popular Movies:';
+          this.showDetails = false;
+          this.showResults = true;
+        }
+      });
+  }
 
   ngOnChanges() {
-    if (this.searchFeature['feature'] == 'popular-movies') {
+    if (this.searchFeature['feature'] == 'home') {
+      console.log('Back to home :)');
+      this.showDetails = false;
+      this.showResults = false;
+    } else if (this.searchFeature['feature'] == 'popular-movies') {
       console.log('Searching popular movies');
       this.http
         .get(

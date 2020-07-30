@@ -6,16 +6,28 @@
   crossorigin="anonymous"
 />
 
-<app-header (headerFeature)="headerFeatureClicked($event)"></app-header>
-<div class="row">
-  <div class="col-xs-12">
-    <app-searched-movie
-      *ngIf="showResults"
-      [searchFeature]="headerFeature"
-    ></app-searched-movie>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-xs-12">
+      <app-header (headerFeature)="headerFeatureClicked($event)"></app-header>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <app-searched-movie
+        *ngIf="showResults"
+        [searchFeature]="headerFeature"
+      ></app-searched-movie>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-12">
+      <app-footer></app-footer>
+    </div>
   </div>
 </div>
-<app-footer></app-footer>
 
 <!-- Bootstrap... -->
 <script

@@ -5,24 +5,39 @@
   padding: 10px;
   text-align: center;
 }
-.header .page-name {
+.header .h1 {
+  border-radius: 5px;
+  border: 1px;
+}
+.header .home {
   font-weight: bold;
   text-align: center;
   cursor: pointer;
   font-size: 40px;
   padding-right: 5%;
   padding-left: 5%;
+  border-radius: 10px;
 }
-.header .page-name:hover {
+.header .home:hover {
   opacity: 1;
   transition: 0.3s;
   background-color: #ffa600;
 }
 @media screen and (max-width: 1000px) {
-  .header .page-name {
+  .header .home {
     width: 100%;
     text-align: center;
   }
+}
+.header .popular-movies {
+  border-radius: 10px;
+  padding: 10px;
+  cursor: pointer;
+}
+.header .popular-movies:hover {
+  opacity: 1;
+  transition: 0.3s;
+  background-color: #ffa600;
 }
 .header .form-control {
   width: 30%;
