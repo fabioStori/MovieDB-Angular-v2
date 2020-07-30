@@ -1,13 +1,13 @@
 @import "../variables";
 @import "../mixins";
 
-.searched-container {
-  width: 90%;
-  margin: 0 auto;
-  text-align: center;
-}
+.col-md-3 {
+  .searched-container {
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+  }
 
-.col-md-6 {
   .page-title {
     font-weight: bold;
     text-align: center;
@@ -17,20 +17,19 @@
     @include hoverTitle;
   }
 
+  .searched-box {
+    text-align: left;
+    margin: 0px;
+    padding: 0px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    float: left;
+    text-align: center;
+    // @include mQ(1350px) {
+    //   width: 100%;
+    // }
+  }
   .searched-movies {
     @include hoverTitle;
   }
-}
-
-.searched-box {
-  text-align: left;
-  margin: 0px;
-  padding: 0px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  float: left;
-  text-align: center;
-  // @include mQ(1250px) {
-  //   width: 100%;
-  // }
 }
