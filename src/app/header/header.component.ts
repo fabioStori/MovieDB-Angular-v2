@@ -1,4 +1,4 @@
-import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -7,28 +7,30 @@ import { Router } from '@angular/router';
   styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent implements OnInit {
-  @Output() searchClicked = new EventEmitter<{
-    title: string;
-  }>();
-
-  @Output() headerFeature = new EventEmitter<{
-    feature: string;
-    searchedTitle: string;
-  }>();
+  headerFeature: string = '';
+  @ViewChild('searchedTitle', { static: true }) searchedTitle: ElementRef;
 
   constructor(private router: Router) {}
 
   ngOnInit(): void {}
 
-  // onSearchClick(searchedMovie: HTMLInputElement) {
-  //   this.searchClicked.emit({
-  //     title: searchedMovie.value,
-  //   });
-  // }
-
-  headerFeatureClicked(feature: string, searchedTitle: string) {
-    this.headerFeature.emit({ feature, searchedTitle });
-    if (feature === 'popular-movies') this.router.navigate(['/pop-movies']);
-    else if (feature === 'home') this.router.navigate(['']);
+  headerFeatureClicked(feature: string) {
+    switch (feature) {
+      case 'home': {
+        this.router.navigate(['']);
+        break;
+      }
+      case 'popular-movies': {
+        this.router.navigate(['pop-movies']);
+        break;
+      }
+      case 'search': {
+        this.router.navigate([
+          'search',
+          this.searchedTitle.nativeElement.value,
+        ]);
+        break;
+      }
+    }
   }
 }
