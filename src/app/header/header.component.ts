@@ -7,10 +7,6 @@ import { Router } from '@angular/router';
   styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent implements OnInit {
-  @Output() searchClicked = new EventEmitter<{
-    title: string;
-  }>();
-
   @Output() headerFeature = new EventEmitter<{
     feature: string;
     searchedTitle: string;
@@ -20,15 +16,21 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  // onSearchClick(searchedMovie: HTMLInputElement) {
-  //   this.searchClicked.emit({
-  //     title: searchedMovie.value,
-  //   });
-  // }
-
   headerFeatureClicked(feature: string, searchedTitle: string) {
     this.headerFeature.emit({ feature, searchedTitle });
-    if (feature === 'popular-movies') this.router.navigate(['/pop-movies']);
-    else if (feature === 'home') this.router.navigate(['']);
+    switch (feature) {
+      case 'home': {
+        this.router.navigate(['']);
+        break;
+      }
+      case 'popular-movies': {
+        this.router.navigate(['pop-movies']);
+        break;
+      }
+      case 'search-title': {
+        this.router.navigate(['search-movie']);
+        break;
+      }
+    }
   }
 }
