@@ -11,6 +11,7 @@ export class MovieDetailsComponent implements OnInit, OnChanges {
 
   posterUrl: string = '';
   showRelatedMovies: boolean = false;
+  showMovieInformation: boolean = false;
   relatedMovies = {};
 
   constructor(private http: HttpClient) {}
@@ -18,6 +19,7 @@ export class MovieDetailsComponent implements OnInit, OnChanges {
   ngOnInit(): void {}
 
   ngOnChanges() {
+
     this.http
       .get(
         `https://api.themoviedb.org/3/movie/${this.movieDetails['id']}?api_key=8fa93c9b6c348f8a5cdc2ac737953f7d`
@@ -30,4 +32,16 @@ export class MovieDetailsComponent implements OnInit, OnChanges {
         }
       });
   }
+
+  movieFeature(feature:string){
+    if (feature === 'similar-movies') {
+      this.showRelatedMovies = !this.showRelatedMovies;
+      this.showMovieInformation = false;
+    } else if (feature === 'movie-information') {
+      this.showRelatedMovies = false;
+      this.showMovieInformation = !this.showMovieInformation;
+    }
+  }
+
+
 }

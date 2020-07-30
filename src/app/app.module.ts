@@ -11,6 +11,7 @@ import { SearchedMovieComponent } from './searched-movie/searched-movie.componen
 import { MovieDetailsComponent } from './searched-movie/movie-details/movie-details.component';
 import { FooterComponent } from './footer/footer.component';
 import { MovieSimilarComponent } from './searched-movie/movie-details/movie-similar/movie-similar.component';
+import { MovieInformationComponent } from './searched-movie/movie-details/movie-information/movie-information.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { MovieSimilarComponent } from './searched-movie/movie-details/movie-simi
     MovieDetailsComponent,
     FooterComponent,
     MovieSimilarComponent,
+    MovieInformationComponent,
   ],
   imports: [BrowserModule, FormsModule, HttpClientModule],
   providers: [],

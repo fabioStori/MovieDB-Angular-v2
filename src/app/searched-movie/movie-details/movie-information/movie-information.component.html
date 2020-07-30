@@ -1,0 +1,29 @@
+<div class="col-md-12">
+  <h2>More Information</h2>
+  <div class="card">
+    <div class="div-img" style="text-align: center;"></div>
+    <div class="card-body">
+      <ul>
+        <li class="card-text">
+          Release date: {{ movieInformation["release_date"] }}
+        </li>
+        <li class="card-text">
+          Average user rating: {{ movieInformation["vote_average"] }}
+        </li>
+
+        <li class="card-text">
+          Run time: {{ movieInformation["runtime"] }} minutes
+        </li>
+
+        <li class="card-text">
+          Genres:
+          <ul>
+            <li *ngFor="let genre of movieInformation['genres']; let i = index">
+              {{ movieInformation["genres"][i]["name"] }}
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
