@@ -23,7 +23,6 @@ export class MovieSimilarComponent implements OnInit, OnChanges {
       .subscribe((resp) => {
         if (resp) {
           console.log('Showing similar movies');
-          console.log(resp);
           this.similarMovies = resp['results'];
           this.posterUrl[0] = `https://image.tmdb.org/t/p/w500/${resp['results'][0]['poster_path']}`;
           this.posterUrl[1] = `https://image.tmdb.org/t/p/w500/${resp['results'][1]['poster_path']}`;

@@ -25,8 +25,6 @@ export class MovieDetailsComponent implements OnInit, OnChanges {
       .subscribe((resp) => {
         if (resp) {
           console.log('Showing details');
-          // console.log(this.movieId);
-          // console.log(resp);
           this.movieDetails = resp;
           this.posterUrl = `https://image.tmdb.org/t/p/w500/${resp['poster_path']}`;
         }

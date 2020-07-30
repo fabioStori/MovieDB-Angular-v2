@@ -1,11 +1,9 @@
 @import "../../variables";
 @import "../../mixins";
 // sass --watch src/app/searched-movie/movie-details/movie-details.component.scss src/app/searched-movie/movie-details/movie-details.component.css
-.col-md-8, .col-md-4{
+.col-md-7, .col-md-3{
   padding: 10px 0px;
 }
-
-
 
 .card {
   // @include mQ(1250px) {

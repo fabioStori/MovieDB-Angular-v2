@@ -1,9 +1,11 @@
-h2 {
+.col-md-12 {
+  padding: 0px 20px;
+}
+.col-md-12 h2 {
   text-align: center;
 }
-
-img {
-  height: 40%;
+.col-md-12 img {
+  width: 35%;
 }
 
 /*# sourceMappingURL=movie-similar.component.css.map */

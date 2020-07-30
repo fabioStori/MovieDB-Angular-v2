@@ -2,10 +2,12 @@
 @import "../../../mixins";
 
 //sass --watch src/app/searched-movie/movie-details/movie-similar/movie-similar.component.scss src/app/searched-movie/movie-details/movie-similar/movie-similar.component.css
-
-h2 {
-  text-align: center;
-}
-img{
-  height: 40%;
+.col-md-12 {
+  padding: 0px 20px;
+  h2 {
+    text-align: center;
+  }
+  img {
+    width: 35%;
+  }
 }
