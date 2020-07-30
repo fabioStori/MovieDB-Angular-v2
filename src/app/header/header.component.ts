@@ -25,7 +25,10 @@ export class HeaderComponent implements OnInit {
         break;
       }
       case 'search': {
-        this.router.navigate(['search',this.searchedTitle.nativeElement.value]);
+        this.router.navigate([
+          'search',
+          this.searchedTitle.nativeElement.value,
+        ]);
         break;
       }
     }

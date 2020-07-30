@@ -70,9 +70,7 @@ export class SearchedContentComponent implements OnInit {
                 }
               });
           });
-        }else
-        this.pageTitle =
-        'No results found.'
+        } else this.pageTitle = 'No results found.';
       }
     }
   }
