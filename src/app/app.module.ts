@@ -17,7 +17,7 @@ import { HomePageComponent } from './home-page/home-page.component';
 const appRoutes: Routes = [
   {path: '', component: HomePageComponent},
   {path: 'pop-movies', component: SearchedContentComponent},
-  {path: 'search-movie', component: SearchedContentComponent},
+  {path: 'search/:searchTitle', component: SearchedContentComponent},
   {path: 'movie-page', component: MoviePageComponent},
 
 ]

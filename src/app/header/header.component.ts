@@ -1,4 +1,4 @@
-import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -7,17 +7,14 @@ import { Router } from '@angular/router';
   styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent implements OnInit {
-  @Output() headerFeature = new EventEmitter<{
-    feature: string;
-    searchedTitle: string;
-  }>();
+  headerFeature: string = '';
+  @ViewChild('searchedTitle', { static: true }) searchedTitle: ElementRef;
 
   constructor(private router: Router) {}
 
   ngOnInit(): void {}
 
-  headerFeatureClicked(feature: string, searchedTitle: string) {
-    this.headerFeature.emit({ feature, searchedTitle });
+  headerFeatureClicked(feature: string) {
     switch (feature) {
       case 'home': {
         this.router.navigate(['']);
@@ -27,8 +24,8 @@ export class HeaderComponent implements OnInit {
         this.router.navigate(['pop-movies']);
         break;
       }
-      case 'search-title': {
-        this.router.navigate(['search-movie']);
+      case 'search': {
+        this.router.navigate(['search',this.searchedTitle.nativeElement.value]);
         break;
       }
     }
