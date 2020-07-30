@@ -1,8 +1,9 @@
 .col-md-12 {
-  padding: 0px 20px;
+  padding: 0px 5px;
 }
 .col-md-12 h2 {
   text-align: center;
+  padding-top: 6px;
 }
 .col-md-12 img {
   width: 35%;

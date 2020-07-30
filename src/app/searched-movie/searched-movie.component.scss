@@ -1,12 +1,9 @@
 @import "../variables";
 @import "../mixins";
 
+//sass --watch src/app/searched-movie/searched-movie.component.scss src/app/searched-movie/searched-movie.component.css
+
 .col-md-3 {
-  .searched-container {
-    width: 90%;
-    margin: 0 auto;
-    text-align: center;
-  }
 
   .page-title {
     font-weight: bold;
@@ -18,12 +15,10 @@
   }
 
   .searched-box {
-    text-align: left;
-    margin: 0px;
-    padding: 0px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    float: left;
+    width: 90%;
+    margin: 0 auto;
+    padding: 10px;
+    float: center;
     text-align: center;
     // @include mQ(1350px) {
     //   width: 100%;

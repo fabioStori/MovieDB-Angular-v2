@@ -3,9 +3,11 @@
 
 //sass --watch src/app/searched-movie/movie-details/movie-similar/movie-similar.component.scss src/app/searched-movie/movie-details/movie-similar/movie-similar.component.css
 .col-md-12 {
-  padding: 0px 20px;
+  padding: 0px 5px;
+
   h2 {
     text-align: center;
+    padding-top: 6px;
   }
   img {
     width: 35%;

@@ -1,7 +1,5 @@
-
 <div class="row">
   <div class="col-md-3">
-    <div class="searched-container">
       <div class="searched-box">
         <h3 class="page-title">
           {{ pageTitle }}
@@ -14,12 +12,8 @@
           {{ movie.title }}
         </button>
       </div>
-    </div>
   </div>
-  <div class="col-md-9">
-    <app-movie-details
-      *ngIf="showDetails"
-      [movieDetails]="chosenMovie"
-    ></app-movie-details>
+  <div class="col-md-9" *ngIf="showDetails">
+    <app-movie-details [movieDetails]="chosenMovie"></app-movie-details>
   </div>
 </div>
