@@ -5,7 +5,7 @@ import { HttpClient } from '@angular/common/http';
 @Component({
   selector: 'app-movie-similar',
   templateUrl: './movie-similar.component.html',
-  styleUrls: ['./movie-similar.component.css'],
+  styleUrls: ['./movie-similar.component.scss'],
 })
 export class MovieSimilarComponent implements OnInit, OnChanges {
   @Input() similarMovies = {};
