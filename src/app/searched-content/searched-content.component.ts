@@ -5,7 +5,6 @@ import { ActivatedRoute, Params } from '@angular/router';
 @Component({
   selector: 'app-searched-content',
   templateUrl: './searched-content.component.html',
-  styleUrls: ['./searched-content.component.scss'],
 })
 export class SearchedContentComponent implements OnInit {
   movies = [];

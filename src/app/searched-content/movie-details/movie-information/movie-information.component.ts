@@ -4,7 +4,6 @@ import { HttpClient } from '@angular/common/http';
 @Component({
   selector: 'app-movie-information',
   templateUrl: './movie-information.component.html',
-  styleUrls: ['./movie-information.component.scss'],
 })
 export class MovieInformationComponent implements OnInit, OnChanges {
   @Input() movieInformation = {};

@@ -1,3 +1,14 @@
 // * {
 //   width: 100%;
 // }
+@import "../assets/scss/_mixins";
+@import "../assets/scss/_variables";
+
+.cont {
+  @include mQ(1002px) {
+    width: 100%;
+  }
+
+  width: 75%;
+  margin: 0 auto;
+}
