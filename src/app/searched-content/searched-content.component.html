@@ -1,17 +1,13 @@
 <div class="row">
   <div class="col-md-3">
-      <div class="searched-box">
-        <h3 class="page-title">
-          {{ pageTitle }}
-        </h3>
-        <button
-          class="btn btn-secundary searched-movies"
-          *ngFor="let movie of movies"
-          (click)="onDetailsClicked(movie)"
-        >
-          {{ movie.title }}
-        </button>
-      </div>
+    <div class="searched-box">
+      <h3 class="page-title">
+        {{ pageTitle }}
+      </h3>
+      <button class="btn btn-secundary searched-movies" *ngFor="let movie of movies" (click)="onDetailsClicked(movie)">
+        {{ movie.title }}
+      </button>
+    </div>
   </div>
   <div class="col-md-9" *ngIf="showDetails">
     <app-movie-details [movieDetails]="chosenMovie"></app-movie-details>

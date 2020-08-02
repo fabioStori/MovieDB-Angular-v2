@@ -16,3 +16,11 @@
     }
   }
 }
+@mixin minWidth($arg) {
+  @if length($arg) == 1 {
+    @media screen and (min-width: nth($arg, 1)) {
+      @content;
+    }
+  }
+}
+

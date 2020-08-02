@@ -1,10 +1,9 @@
-@import "../variables";
-@import "../mixins";
+@import "../../assets/scss/_mixins";
+@import "../../assets/scss/_variables";
 
 //sass --watch src/app/searched-movie/searched-movie.component.scss src/app/searched-movie/searched-movie.component.css
 
 .col-md-3 {
-
   .page-title {
     font-weight: bold;
     text-align: center;
@@ -15,15 +14,13 @@
   }
 
   .searched-box {
-    width: 90%;
-    margin: 0 auto;
+    width: 100%;
+    margin: 0;
     padding: 10px;
     float: center;
     text-align: center;
-    // @include mQ(1350px) {
-    //   width: 100%;
-    // }
   }
+
   .searched-movies {
     @include hoverTitle;
   }
