@@ -11,12 +11,13 @@ import { LayoutModule } from './layout/layout.module';
 import { HomeModule } from './home/home.module';
 import { MoviesModule } from './movies/movies.module';
 import { SearchModule } from './search/search.module';
+import { SharedModule } from './shared/shared.module';
 
 import { AppRoutingModule } from './app-routing.module';
 const appRoutes: Routes = [
   // { path: '', component: HomeModule },
-  { path: 'pop-movies', component: SearchModule },
-  { path: 'search/:searchTitle', component: SearchModule },
+  { path: 'pop-movies', component: MoviesModule },
+  { path: 'search/:searchTitle', component: MoviesModule },
   // { path: 'movie-page', component: MoviePageComponent },
 ];
 
@@ -26,6 +27,7 @@ const appRoutes: Routes = [
     HomeModule,
     LayoutModule,
     SearchModule,
+    SharedModule,
 
     CommonModule,
     BrowserModule,

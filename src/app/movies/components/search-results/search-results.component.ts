@@ -1,19 +1,24 @@
 import { Component, OnInit, Input, OnChanges, Output } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute, Params } from '@angular/router';
+import { SearchService } from '../../../shared/services/search.service';
 
 @Component({
-  selector: 'app-searched-content',
-  templateUrl: './searched-content.component.html',
+  selector: 'app-search-results',
+  templateUrl: './search-results.component.html',
 })
-export class SearchedContentComponent implements OnInit {
+export class SearchResultsComponent implements OnInit {
   movies = [];
   pageTitle: string = '';
   showDetails: boolean = false;
   showResults: boolean = false;
   chosenMovie = {};
 
-  constructor(private http: HttpClient, private route: ActivatedRoute) {}
+  constructor(
+    private http: HttpClient,
+    private route: ActivatedRoute,
+    private search: SearchService
+  ) {}
 
   ngOnInit(): void {
     switch (this.route['url']['_value']['0']['path']) {
@@ -75,7 +80,8 @@ export class SearchedContentComponent implements OnInit {
   }
 
   onDetailsClicked(details) {
-    this.chosenMovie = details;
+    this.search.onMovieDetailsClicked(details);
+    // console.log(details)
     this.showDetails = true;
   }
 }

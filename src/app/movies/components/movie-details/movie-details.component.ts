@@ -1,35 +1,30 @@
 import { Component, OnInit, Input, OnChanges } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { SearchService } from 'src/app/shared/services/search.service';
 
 @Component({
   selector: 'app-movie-details',
   templateUrl: './movie-details.component.html',
 })
-export class MovieDetailsComponent implements OnInit, OnChanges {
-  @Input() movieDetails = {};
+export class MovieDetailsComponent implements OnInit {
+  movieDetails = {};
 
   posterUrl: string = '';
   showRelatedMovies: boolean = false;
   showMovieInformation: boolean = false;
   relatedMovies = {};
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private search: SearchService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.movieDetails = this.search.movieDetails;
 
-  ngOnChanges() {
-
-    this.http
-      .get(
-        `https://api.themoviedb.org/3/movie/${this.movieDetails['id']}?api_key=8fa93c9b6c348f8a5cdc2ac737953f7d`
-      )
-      .subscribe((resp) => {
-        if (resp) {
-          console.log('Showing details');
-          this.movieDetails = resp;
-          this.posterUrl = `https://image.tmdb.org/t/p/w500/${resp['poster_path']}`;
-        }
-      });
+    this.search.clickedMovieDetails
+      .subscribe((details) => {
+        console.log(details)
+        // this.movieDetails = details;
+        // this.posterUrl = `https://image.tmdb.org/t/p/w500/${details['poster_path']}`;
+      })
   }
 
   movieFeature(feature:string){
