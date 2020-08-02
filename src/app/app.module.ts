@@ -6,19 +6,17 @@ import { HttpClientModule } from '@angular/common/http';
 import { Routes, RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
-import { SearchedContentComponent } from './searched-content/searched-content.component';
 
 import { LayoutModule } from './layout/layout.module';
 import { HomeModule } from './home/home.module';
 import { MoviesModule } from './movies/movies.module';
+import { SearchModule } from './search/search.module';
 
 import { AppRoutingModule } from './app-routing.module';
-import { HomePageComponent } from './home/components/home-page/home-page.component';
-
 const appRoutes: Routes = [
   // { path: '', component: HomeModule },
-  { path: 'pop-movies', component: SearchedContentComponent },
-  { path: 'search/:searchTitle', component: SearchedContentComponent },
+  { path: 'pop-movies', component: SearchModule },
+  { path: 'search/:searchTitle', component: SearchModule },
   // { path: 'movie-page', component: MoviePageComponent },
 ];
 
@@ -27,6 +25,7 @@ const appRoutes: Routes = [
     MoviesModule,
     HomeModule,
     LayoutModule,
+    SearchModule,
 
     CommonModule,
     BrowserModule,
@@ -36,7 +35,7 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes),
     AppRoutingModule,
   ],
-  declarations: [AppComponent, SearchedContentComponent],
+  declarations: [AppComponent],
   bootstrap: [AppComponent],
   providers: [],
 })

@@ -2,19 +2,21 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
-
   {
     path: '',
     loadChildren: './home/home.module#HomeModule',
-    },
-]
+  },{
+    path: 'search',
+    loadChildren: './search/search.module#HomeModule',
+  },
+];
 
 export const appLocaleRoutes: Routes = [
   {
     path: '',
     children: [...routes],
   },
-]
+];
 
 @NgModule({
   imports: [
@@ -25,4 +27,4 @@ export const appLocaleRoutes: Routes = [
   ],
   exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
