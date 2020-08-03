@@ -19,11 +19,15 @@ export class SearchResultsResolver implements Resolve<{}> {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
   ): {} | Observable<{}> | Promise<{}> {
+
     if(route.data['routeName'] === 'Popular movies'){
       console.log('this.search.searchPopMovies()')
       return this.search.searchPopMovies();
+
     }else if (route.data['routeName'] === 'Searched movies'){
       return this.search.searchMovieByTitle(this.route.snapshot.params['searchTitle']);
+    }else{
+      return {}
     }
   }
 }
