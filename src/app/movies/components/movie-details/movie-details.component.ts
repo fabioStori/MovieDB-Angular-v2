@@ -17,6 +17,7 @@ export class MovieDetailsComponent implements OnInit {
   constructor(private http: HttpClient, private search: SearchService) {}
 
   ngOnInit(): void {
+    this.movieDetails = this.search.movieDetails;
 
     this.search.clickedMovieDetails
       .subscribe((details) => {
