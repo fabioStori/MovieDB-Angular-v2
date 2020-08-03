@@ -27,9 +27,9 @@ export class SearchService {
     ).then((response) => response.json());
   }
 
-  searchSimilarMovies(movie) {
+  searchSimilarMovies(movieId) {
     return fetch(
-      `https://api.themoviedb.org/3/movie/${movie['id']}/similar?api_key=8fa93c9b6c348f8a5cdc2ac737953f7d&language=en-US&page=1`
+      `https://api.themoviedb.org/3/movie/${movieId}/similar?api_key=8fa93c9b6c348f8a5cdc2ac737953f7d&language=en-US&page=1`
     ).then((response) => response.json());
   }
 

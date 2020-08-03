@@ -31,7 +31,7 @@
       ></app-movie-information>
     </div>
     <div class="col-md-3" *ngIf="showRelatedMovies">
-      <app-movie-similar [similarMovies]="movieDetails"></app-movie-similar>
+      <app-movie-similar [movieId]="movieDetails['id']"></app-movie-similar>
     </div>
   </div>
 </div>

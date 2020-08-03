@@ -15,11 +15,16 @@ export class MovieDetailsComponent implements OnInit {
   constructor(private search: SearchService) {}
 
   ngOnInit(): void {
+    //need to find a way to only show the data after the movieDetails is fetched and ready
     this.movieDetails = this.search.getMovieDetails();
+    this.showRelatedMovies = false;
+    this.showMovieInformation = false;
     this.posterUrl = `https://image.tmdb.org/t/p/w500/${this.movieDetails['poster_path']}`;
 
     this.search.clickedMovieDetails.subscribe((details) => {
       this.movieDetails = details;
+      this.showRelatedMovies = false;
+      this.showMovieInformation = false;
       this.posterUrl = `https://image.tmdb.org/t/p/w500/${details['poster_path']}`;
     });
   }

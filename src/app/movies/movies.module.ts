@@ -25,6 +25,6 @@ import { SearchResultsResolver } from './resolvers/search-results.resolver';
     SearchResultsComponent,
     CommonModule,
   ],
-  providers: [SearchResultsResolver]
+  providers: [SearchResultsResolver, ]
 })
 export class MoviesModule {}
