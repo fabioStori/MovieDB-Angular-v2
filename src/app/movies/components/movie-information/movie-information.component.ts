@@ -1,27 +1,20 @@
-import { Component, OnInit, Input, OnChanges } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { Component, OnInit, Input } from '@angular/core';
+import { SearchService } from 'src/app/shared/services/search.service';
 
 @Component({
   selector: 'app-movie-information',
   templateUrl: './movie-information.component.html',
 })
-export class MovieInformationComponent implements OnInit, OnChanges {
+export class MovieInformationComponent implements OnInit {
   @Input() movieInformation = {};
 
+  constructor(private search: SearchService) {}
 
-  constructor(private http: HttpClient) {}
-
-  ngOnInit(): void {}
-  ngOnChanges() {
-    this.http
-      .get(
-        `https://api.themoviedb.org/3/movie/${this.movieInformation['id']}?api_key=8fa93c9b6c348f8a5cdc2ac737953f7d`
-      )
-      .subscribe((resp) => {
-        if (resp) {
-          console.log('Showing information');
-          this.movieInformation = resp;
-        }
-      });
+  ngOnInit(): void {
+    this.search.searchInformation(this.movieInformation)
+      .then((movieInformation) => {
+        console.log('Showing ' + movieInformation.title + ' informations')
+        this.movieInformation = movieInformation;
+      })
   }
 }
