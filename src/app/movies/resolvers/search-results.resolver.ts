@@ -12,22 +12,21 @@ import { SearchService } from 'src/app/shared/services/search.service';
   providedIn: 'root',
 })
 export class SearchResultsResolver implements Resolve<{}> {
-
-  constructor(private route: ActivatedRoute, private search: SearchService){}
+  constructor(private route: ActivatedRoute, private search: SearchService) {}
 
   resolve(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
   ): {} | Observable<{}> | Promise<{}> {
-
-    if(route.data['routeName'] === 'Popular movies'){
-      console.log('this.search.searchPopMovies()')
+    if (route.data['routeName'] === 'Popular movies') {
+      console.log('this.search.searchPopMovies()');
       return this.search.searchPopMovies();
-
-    }else if (route.data['routeName'] === 'Searched movies'){
-      return this.search.searchMovieByTitle(this.route.snapshot.params['searchTitle']);
-    }else{
-      return {}
+    } else if (route.data['routeName'] === 'Searched movies') {
+      return this.search.searchMovieByTitle(
+        this.route.snapshot.params['searchTitle']
+      );
+    } else {
+      return {};
     }
   }
 }

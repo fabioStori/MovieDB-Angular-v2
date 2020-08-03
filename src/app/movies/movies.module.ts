@@ -8,21 +8,21 @@ import { SearchResultsComponent } from './components/search-results/search-resul
 import { MoviesRoutingModule } from './movies-routing.module';
 import { SearchResultsResolver } from './resolvers/search-results.resolver';
 
+const moviesComponents = [
+  MovieDetailsComponent,
+  MovieInformationComponent,
+  MoviePageComponent,
+  MovieSimilarComponent,
+  SearchResultsComponent
+];
+
 @NgModule({
   declarations: [
-    MovieDetailsComponent,
-    MovieInformationComponent,
-    MoviePageComponent,
-    MovieSimilarComponent,
-    SearchResultsComponent,
+    ...moviesComponents,
   ],
   imports: [CommonModule, MoviesRoutingModule],
   exports: [
-    MovieDetailsComponent,
-    MovieInformationComponent,
-    MoviePageComponent,
-    MovieSimilarComponent,
-    SearchResultsComponent,
+    ...moviesComponents,
     CommonModule,
   ],
   providers: [SearchResultsResolver, ]
