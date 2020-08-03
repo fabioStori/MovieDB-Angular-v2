@@ -7,10 +7,22 @@ import { MovieSimilarComponent } from './components/movie-similar/movie-similar.
 import { SearchResultsComponent } from './components/search-results/search-results.component';
 import { MoviesRoutingModule } from './movies-routing.module';
 
-
 @NgModule({
-  declarations: [MovieDetailsComponent, MovieInformationComponent, MoviePageComponent, MovieSimilarComponent, SearchResultsComponent],
+  declarations: [
+    MovieDetailsComponent,
+    MovieInformationComponent,
+    MoviePageComponent,
+    MovieSimilarComponent,
+    SearchResultsComponent,
+  ],
   imports: [CommonModule, MoviesRoutingModule],
-  exports: [MovieDetailsComponent, MovieInformationComponent, MoviePageComponent, MovieSimilarComponent, SearchResultsComponent, CommonModule]
+  exports: [
+    MovieDetailsComponent,
+    MovieInformationComponent,
+    MoviePageComponent,
+    MovieSimilarComponent,
+    SearchResultsComponent,
+    CommonModule,
+  ],
 })
 export class MoviesModule {}

@@ -1,9 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { CommonModule } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
-import { Routes, RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 
@@ -14,12 +11,6 @@ import { SearchModule } from './search/search.module';
 import { SharedModule } from './shared/shared.module';
 
 import { AppRoutingModule } from './app-routing.module';
-const appRoutes: Routes = [
-  // { path: '', component: HomeModule },
-  { path: 'pop-movies', component: MoviesModule },
-  { path: 'search/:searchTitle', component: MoviesModule },
-  // { path: 'movie-page', component: MoviePageComponent },
-];
 
 @NgModule({
   imports: [
@@ -29,12 +20,9 @@ const appRoutes: Routes = [
     SearchModule,
     SharedModule,
 
-    CommonModule,
     BrowserModule,
     FormsModule,
-    HttpClientModule,
 
-    RouterModule.forRoot(appRoutes),
     AppRoutingModule,
   ],
   declarations: [AppComponent],
