@@ -8,6 +8,7 @@ export class SearchService{
 
   onMovieDetailsClicked(details: {}){
     // console.log(details)
+    this.movieDetails = details;
     this.clickedMovieDetails.emit(details)
   }
 

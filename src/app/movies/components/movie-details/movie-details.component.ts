@@ -17,13 +17,12 @@ export class MovieDetailsComponent implements OnInit {
   constructor(private http: HttpClient, private search: SearchService) {}
 
   ngOnInit(): void {
-    this.movieDetails = this.search.movieDetails;
 
     this.search.clickedMovieDetails
       .subscribe((details) => {
         console.log(details)
-        // this.movieDetails = details;
-        // this.posterUrl = `https://image.tmdb.org/t/p/w500/${details['poster_path']}`;
+        this.movieDetails = details;
+        this.posterUrl = `https://image.tmdb.org/t/p/w500/${details['poster_path']}`;
       })
   }
 
