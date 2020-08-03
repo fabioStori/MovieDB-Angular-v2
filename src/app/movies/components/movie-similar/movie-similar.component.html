@@ -1,20 +1,19 @@
-<div class="row">
-  <div class="col-md-12">
-    <h2>Similar Movies</h2>
-    <div
-      class="card"
-      *ngFor="let movie of similarMovies | slice: 0:2; let i = index"
-    >
-      <div class="div-img" style="text-align: center;">
-        <img
-          class="img-fluid"
-          [src]="posterUrl[i]"
-          alt="Card image cap"
-        />
-      </div>
-      <div class="card-body">
-        <h2 class="card-title">{{ movie["title"] }}</h2>
-        <p class="card-text">{{ movie["overview"] }}</p>
+<h3 *ngIf="!foundedSimilarMovies" style="padding: 20px;">No results found.</h3>
+<div *ngIf="foundedSimilarMovies">
+  <div class="row">
+    <div class="col-md-12">
+      <h2>Similar Movies</h2>
+      <div
+        class="card"
+        *ngFor="let movie of similarMovies | slice: 0:2; let i = index"
+      >
+        <div class="div-img" style="text-align: center;">
+          <img class="img-fluid" [src]="posterUrl[i]" alt="Card image cap" />
+        </div>
+        <div class="card-body">
+          <h2 class="card-title">{{ movie["title"] }}</h2>
+          <p class="card-text">{{ movie["overview"] }}</p>
+        </div>
       </div>
     </div>
   </div>

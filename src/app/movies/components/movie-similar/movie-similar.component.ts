@@ -9,16 +9,22 @@ export class MovieSimilarComponent implements OnInit {
   @Input() movieId: string;
   similarMovies = [];
   posterUrl = [];
+  foundedSimilarMovies: boolean = false;
 
   constructor(private search: SearchService) {}
 
   ngOnInit(): void {
     this.search.searchSimilarMovies(this.movieId).then((similarMovies) => {
-      this.similarMovies = similarMovies['results']
-      for (const index in this.similarMovies) {
-        this.posterUrl[
-          index
-        ] = `https://image.tmdb.org/t/p/w500/${this.similarMovies[index]['poster_path']}`;
+      if (similarMovies['results'].length !== 0) {
+        this.similarMovies = similarMovies['results'];
+        for (const index in this.similarMovies) {
+          this.posterUrl[
+            index
+          ] = `https://image.tmdb.org/t/p/w500/${this.similarMovies[index]['poster_path']}`;
+        }
+        this.foundedSimilarMovies = true;
+      } else {
+        this.foundedSimilarMovies = false;
       }
     });
   }

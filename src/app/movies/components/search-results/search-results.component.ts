@@ -20,19 +20,20 @@ export class SearchResultsComponent implements OnInit {
       console.log(data);
       if (data['routeName'] === 'Popular movies')
         this.refreshSearchResults(data['movies'], 'pop-movies');
-      else if (data['routeName'] === 'Searched movie')
-        this.refreshSearchResults(data['movies'], 'title-search');
+      else if (data['routeName'] === 'Searched movies')
+        this.refreshSearchResults(data, 'title-search');
     });
   }
 
   refreshSearchResults(searchResults, searchType: string) {
-    this.movies = searchResults['results'];
     this.showDetails = false;
     this.showResults = true;
 
     if (searchType === 'pop-movies') {
+      this.movies = searchResults['results'];
       this.pageTitle = 'Showing Popular Movies';
     } else {
+      this.movies = searchResults['movies']['results'];
       this.pageTitle =
         'Showing results for: ' + this.route.snapshot.params['searchTitle'];
     }

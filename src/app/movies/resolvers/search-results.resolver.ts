@@ -19,12 +19,9 @@ export class SearchResultsResolver implements Resolve<{}> {
     state: RouterStateSnapshot
   ): {} | Observable<{}> | Promise<{}> {
     if (route.data['routeName'] === 'Popular movies') {
-      console.log('this.search.searchPopMovies()');
       return this.search.searchPopMovies();
     } else if (route.data['routeName'] === 'Searched movies') {
-      return this.search.searchMovieByTitle(
-        this.route.snapshot.params['searchTitle']
-      );
+      return this.search.searchMovieByTitle(route.params['searchTitle']);
     } else {
       return {};
     }

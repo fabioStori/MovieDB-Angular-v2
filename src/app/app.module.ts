@@ -7,7 +7,6 @@ import { AppComponent } from './app.component';
 import { LayoutModule } from './layout/layout.module';
 import { HomeModule } from './home/home.module';
 import { MoviesModule } from './movies/movies.module';
-import { SearchModule } from './search/search.module';
 import { SharedModule } from './shared/shared.module';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -17,7 +16,6 @@ import { AppRoutingModule } from './app-routing.module';
     MoviesModule,
     HomeModule,
     LayoutModule,
-    SearchModule,
     SharedModule,
 
     BrowserModule,

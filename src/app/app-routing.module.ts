@@ -7,7 +7,7 @@ const routes: Routes = [
     loadChildren: './home/home.module#HomeModule',
   },{
     path: 'search',
-    loadChildren: './search/search.module#HomeModule',
+    loadChildren: './movies/movies.module#MoviesModule',
   },
 ];
 
