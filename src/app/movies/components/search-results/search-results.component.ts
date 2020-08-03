@@ -1,5 +1,5 @@
-import { Component, OnInit} from '@angular/core';
-import { ActivatedRoute, Params } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Data } from '@angular/router';
 import { SearchService } from '../../../shared/services/search.service';
 
 @Component({
@@ -12,39 +12,17 @@ export class SearchResultsComponent implements OnInit {
   showDetails: boolean = false;
   showResults: boolean = false;
   chosenMovie = {};
-  routeSnapshot = this.route.snapshot.params['searchTitle'];
 
-  constructor(
-    private route: ActivatedRoute,
-    private search: SearchService
-  ) {}
+  constructor(private route: ActivatedRoute, private search: SearchService) {}
 
   ngOnInit(): void {
-    switch (this.route['url']['_value']['0']['path']) {
-      case 'pop-movies': {
-        this.search.searchPopMovies().then((searchResults) => {
-          this.refreshSearchResults(searchResults, 'pop-movies');
-        });
-        break;
-      }
-      default: {
-        if (this.routeSnapshot !== '') {
-          this.search
-            .searchMovieByTitle(this.routeSnapshot)
-            .then((searchResults) => {
-              this.refreshSearchResults(searchResults, 'title-search');
-            });
-
-          this.route.params.subscribe(() => {
-            this.search
-              .searchMovieByTitle(this.route.snapshot.params['searchTitle'])
-              .then((searchResults) => {
-                this.refreshSearchResults(searchResults, 'title-search');
-              });
-          });
-        } else this.pageTitle = 'No results found.';
-      }
-    }
+    this.route.data.subscribe((data: Data) => {
+      console.log(data);
+      if (data['routeName'] === 'Popular movies')
+        this.refreshSearchResults(data['movies'], 'pop-movies');
+      else if (data['routeName'] === 'Searched movie')
+        this.refreshSearchResults(data['movies'], 'title-search');
+    });
   }
 
   refreshSearchResults(searchResults, searchType: string) {

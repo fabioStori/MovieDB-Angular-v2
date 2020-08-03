@@ -6,6 +6,7 @@ import { MoviePageComponent } from './components/movie-page/movie-page.component
 import { MovieSimilarComponent } from './components/movie-similar/movie-similar.component';
 import { SearchResultsComponent } from './components/search-results/search-results.component';
 import { MoviesRoutingModule } from './movies-routing.module';
+import { SearchResultsResolver } from './resolver/search-results.resolver';
 
 @NgModule({
   declarations: [
@@ -24,5 +25,6 @@ import { MoviesRoutingModule } from './movies-routing.module';
     SearchResultsComponent,
     CommonModule,
   ],
+  providers: [SearchResultsResolver]
 })
 export class MoviesModule {}
