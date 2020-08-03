@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Data } from '@angular/router';
+import { ActivatedRoute, Data, Router } from '@angular/router';
 import { SearchService } from '../../../shared/services/search.service';
 
 @Component({
@@ -13,13 +13,13 @@ export class SearchResultsComponent implements OnInit {
   showResults: boolean = false;
   chosenMovie = {};
 
-  constructor(private route: ActivatedRoute, private search: SearchService) {}
+  constructor(private route: ActivatedRoute, private router: Router, private search: SearchService) {}
 
   ngOnInit(): void {
     this.route.data.subscribe((data: Data) => {
       console.log(data);
       if (data['routeName'] === 'Popular movies')
-        this.refreshSearchResults(data['movies'], 'pop-movies');
+        this.refreshSearchResults(data, 'pop-movies');
       else if (data['routeName'] === 'Searched movies')
         this.refreshSearchResults(data, 'title-search');
     });
@@ -30,7 +30,7 @@ export class SearchResultsComponent implements OnInit {
     this.showResults = true;
 
     if (searchType === 'pop-movies') {
-      this.movies = searchResults['results'];
+      this.movies = searchResults['movies']['results'];
       this.pageTitle = 'Showing Popular Movies';
     } else {
       this.movies = searchResults['movies']['results'];
@@ -39,8 +39,8 @@ export class SearchResultsComponent implements OnInit {
     }
   }
 
-  onDetailsClicked(details) {
+  onDetailsClicked(details, index) {
     this.search.onMovieDetailsClicked(details);
-    this.showDetails = true;
+    this.router.navigate([index], {relativeTo: this.route})
   }
 }

@@ -4,7 +4,7 @@
       <h3 class="page-title">
         {{ pageTitle }}
       </h3>
-      <button class="btn btn-secundary searched-movies" *ngFor="let movie of movies" (click)="onDetailsClicked(movie)">
+      <button class="btn btn-secundary searched-movies" *ngFor="let movie of movies; let i = index" (click)="onDetailsClicked(movie, i)" >
         {{ movie.title }}
       </button>
     </div>
