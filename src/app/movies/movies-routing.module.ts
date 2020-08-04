@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { SearchResultsComponent } from './components/search-results/search-results.component';
 import { SearchResultsResolver } from './resolvers/search-results.resolver';
 import { MovieDetailsComponent } from './components/movie-details/movie-details.component';
+import { MovieDetailsResolver } from './resolvers/movie-details.resolver';
 
 const routes: Routes = [
   {
@@ -13,8 +14,12 @@ const routes: Routes = [
     },
     resolve: { movies: SearchResultsResolver },
     children: [
-      {path: ':id', component: MovieDetailsComponent}
-    ]
+      {
+        path: ':id',
+        component: MovieDetailsComponent,
+        resolve: { movie: MovieDetailsResolver },
+      },
+    ],
   },
   {
     path: 'search/:searchTitle',
@@ -24,8 +29,12 @@ const routes: Routes = [
     },
     resolve: { movies: SearchResultsResolver },
     children: [
-      {path: ':id', component: MovieDetailsComponent}
-    ]
+      {
+        path: ':id',
+        component: MovieDetailsComponent,
+        resolve: { movie: MovieDetailsResolver },
+      },
+    ],
   },
 ];
 
