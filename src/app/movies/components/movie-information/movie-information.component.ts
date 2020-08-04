@@ -1,5 +1,4 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { SearchService } from 'src/app/shared/services/search.service';
 
 @Component({
   selector: 'app-movie-information',
@@ -8,9 +7,5 @@ import { SearchService } from 'src/app/shared/services/search.service';
 export class MovieInformationComponent implements OnInit {
   @Input() movieInformation = {};
 
-  constructor(private search: SearchService) {}
-
-  ngOnInit(): void {
-    this.movieInformation = this.search.getMovieDetails()
-  }
+  ngOnInit(): void {}
 }
