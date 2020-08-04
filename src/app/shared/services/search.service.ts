@@ -21,7 +21,7 @@ export class SearchService {
     ).then((response) => response.json());
   }
 
-  searchMovieById(id) {
+  searchMovieById(id: number) {
     return fetch(
       `https://api.themoviedb.org/3/movie/${id}?api_key=8fa93c9b6c348f8a5cdc2ac737953f7d`
     ).then((response) => response.json());

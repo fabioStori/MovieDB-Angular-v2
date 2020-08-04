@@ -1,24 +1,27 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { SearchService } from 'src/app/shared/services/search.service';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Data } from '@angular/router';
 
 @Component({
   selector: 'app-movie-similar',
   templateUrl: './movie-similar.component.html',
 })
 export class MovieSimilarComponent implements OnInit {
-  @Input() movieId: string;
   similarMovies = [];
   posterUrl = [];
   foundedSimilarMovies: boolean = false;
 
-  constructor(private search: SearchService) {}
+  constructor(
+    private route: ActivatedRoute,
+  ) {}
 
   ngOnInit(): void {
-    this.search.searchSimilarMovies(this.movieId).then((similarMovies) => {
-      if (similarMovies['results'].length !== 0) {
-        this.similarMovies = similarMovies['results'];
+    this.route.data.subscribe((data: Data) => {
+      if (data['similarMovies']['results'].length !== 0) {
+        this.similarMovies = data['similarMovies']['results'];
         for (const i in this.similarMovies) {
-          this.posterUrl[i] = `https://image.tmdb.org/t/p/w500/${this.similarMovies[i]['poster_path']}`;
+          this.posterUrl[
+            i
+          ] = `https://image.tmdb.org/t/p/w500/${this.similarMovies[i]['poster_path']}`;
         }
         this.foundedSimilarMovies = true;
       } else {
