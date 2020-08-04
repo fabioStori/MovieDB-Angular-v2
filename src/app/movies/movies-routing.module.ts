@@ -7,6 +7,7 @@ import { MovieDetailsResolver } from './resolvers/movie-details.resolver';
 import { MovieInformationComponent } from './components/movie-information/movie-information.component';
 import { MovieSimilarComponent } from './components/movie-similar/movie-similar.component';
 import { MovieSimilarResolver } from './resolvers/movie-similar.resolver';
+import { MoviePageComponent } from './components/movie-page/movie-page.component';
 
 const routes: Routes = [
   {
@@ -22,14 +23,11 @@ const routes: Routes = [
         component: MovieDetailsComponent,
         resolve: { movie: MovieDetailsResolver },
         children: [
-          {
-            path: 'info',
-            component: MovieInformationComponent,
-          },
+          { path: 'info', component: MovieInformationComponent },
           {
             path: 'similar',
             component: MovieSimilarComponent,
-            resolve: { similarMovies: MovieSimilarResolver}
+            resolve: { similarMovies: MovieSimilarResolver },
           },
         ],
       },
@@ -49,11 +47,16 @@ const routes: Routes = [
         resolve: { movie: MovieDetailsResolver },
         children: [
           { path: 'info', component: MovieInformationComponent },
-          { path: 'similar', component: MovieSimilarComponent },
+          {
+            path: 'similar',
+            component: MovieSimilarComponent,
+            resolve: { similarMovies: MovieSimilarResolver },
+          },
         ],
       },
     ],
   },
+  { path: 'movie-page/:id', component: MoviePageComponent },
 ];
 
 @NgModule({
