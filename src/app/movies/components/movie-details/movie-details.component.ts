@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SearchService } from 'src/app/shared/services/search.service';
+import { ActivatedRoute, Data } from '@angular/router';
 
 @Component({
   selector: 'app-movie-details',
@@ -12,21 +13,16 @@ export class MovieDetailsComponent implements OnInit {
   showMovieInformation: boolean = false;
   relatedMovies = {};
 
-  constructor(private search: SearchService) {}
+  constructor(private route: ActivatedRoute, private search: SearchService) {}
 
   ngOnInit(): void {
     //need to find a way to show the data only after the movieDetails is fetched and ready
-    this.movieDetails = this.search.getMovieDetails();
 
-    this.showRelatedMovies = false;
-    this.showMovieInformation = false;
-    this.posterUrl = `https://image.tmdb.org/t/p/w500/${this.movieDetails['poster_path']}`;
-
-    this.search.clickedMovieDetails.subscribe((details) => {
-      this.movieDetails = details;
+    this.route.data.subscribe((data: Data) => {
+      this.movieDetails = data['movie'];
       this.showRelatedMovies = false;
       this.showMovieInformation = false;
-      this.posterUrl = `https://image.tmdb.org/t/p/w500/${details['poster_path']}`;
+      this.posterUrl = `https://image.tmdb.org/t/p/w500/${data['movie']['poster_path']}`;
     });
   }
 

@@ -17,10 +17,8 @@ export class MovieSimilarComponent implements OnInit {
     this.search.searchSimilarMovies(this.movieId).then((similarMovies) => {
       if (similarMovies['results'].length !== 0) {
         this.similarMovies = similarMovies['results'];
-        for (const index in this.similarMovies) {
-          this.posterUrl[
-            index
-          ] = `https://image.tmdb.org/t/p/w500/${this.similarMovies[index]['poster_path']}`;
+        for (const i in this.similarMovies) {
+          this.posterUrl[i] = `https://image.tmdb.org/t/p/w500/${this.similarMovies[i]['poster_path']}`;
         }
         this.foundedSimilarMovies = true;
       } else {

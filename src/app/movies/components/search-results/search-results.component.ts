@@ -15,7 +15,6 @@ export class SearchResultsComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.data.subscribe((data: Data) => {
-      console.log(data);
       if (data['routeName'] === 'Popular movies')
         this.refreshSearchResults(data, 'pop-movies');
       else if (data['routeName'] === 'Searched movies')

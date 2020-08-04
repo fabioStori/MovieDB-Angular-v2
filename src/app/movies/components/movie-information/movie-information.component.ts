@@ -11,10 +11,6 @@ export class MovieInformationComponent implements OnInit {
   constructor(private search: SearchService) {}
 
   ngOnInit(): void {
-    this.search.searchInformation(this.movieInformation)
-      .then((movieInformation) => {
-        console.log('Showing ' + movieInformation.title + ' informations')
-        this.movieInformation = movieInformation;
-      })
+    this.movieInformation = this.search.getMovieDetails()
   }
 }
