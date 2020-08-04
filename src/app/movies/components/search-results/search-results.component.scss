@@ -22,8 +22,9 @@
   }
 
   .searched-movies {
-    width: auto;
-    margin: 2px;
+    white-space: normal;
+    font-size: medium;
+    margin: 1px;
     @include hoverTitle;
   }
 }
