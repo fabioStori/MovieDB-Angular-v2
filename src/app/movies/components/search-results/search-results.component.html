@@ -4,12 +4,15 @@
       <h3 class="page-title">
         {{ pageTitle }}
       </h3>
-      <button class="btn btn-secundary searched-movies" *ngFor="let movie of movies; let i = index" (click)="onDetailsClicked(movie, i)" >
+      <button class="btn btn-secundary searched-movies" *ngFor="let movie of movies; let i = index" (click)="onDetailsClicked(movie)" >
         {{ movie.title }}
       </button>
     </div>
   </div>
-  <div class="col-md-9" *ngIf="showDetails">
-    <app-movie-details></app-movie-details>
+  <div class="col-md-9">
+    <router-outlet></router-outlet>
   </div>
+  <!-- <div class="col-md-9">
+    <app-movie-details></app-movie-details>
+  </div> -->
 </div>

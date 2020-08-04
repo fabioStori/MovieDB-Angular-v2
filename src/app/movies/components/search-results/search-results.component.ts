@@ -9,8 +9,6 @@ import { SearchService } from '../../../shared/services/search.service';
 export class SearchResultsComponent implements OnInit {
   movies = [];
   pageTitle: string = '';
-  showDetails: boolean = false;
-  showResults: boolean = false;
   chosenMovie = {};
 
   constructor(private route: ActivatedRoute, private router: Router, private search: SearchService) {}
@@ -26,9 +24,6 @@ export class SearchResultsComponent implements OnInit {
   }
 
   refreshSearchResults(searchResults, searchType: string) {
-    this.showDetails = false;
-    this.showResults = true;
-
     if (searchType === 'pop-movies') {
       this.movies = searchResults['movies']['results'];
       this.pageTitle = 'Showing Popular Movies';
@@ -39,8 +34,8 @@ export class SearchResultsComponent implements OnInit {
     }
   }
 
-  onDetailsClicked(details, index) {
+  onDetailsClicked(details) {
     this.search.onMovieDetailsClicked(details);
-    this.router.navigate([index], {relativeTo: this.route})
+    this.router.navigate([details['id']], {relativeTo: this.route})
   }
 }

@@ -3,32 +3,20 @@
     <div class="col-md-8">
       <div class="card">
         <div class="div-img">
-          <img
-            class="img-fluid card-img-middle"
-            [src]="posterUrl"
-            alt="Card image cap"
-          />
+          <img class="img-fluid card-img-middle" [src]="posterUrl" alt="Card image cap" />
         </div>
         <div class="card-body">
           <h2 class="card-title">{{ movieDetails["title"] }}</h2>
           <p class="card-text">{{ movieDetails["overview"] }}</p>
           <div class="col-xs-12" style="text-align: center;">
-            <a (click)="movieFeature('similar-movies')" class="btn btn-success"
-              >See Related Movies</a
-            >
-            <a
-              (click)="movieFeature('movie-information')"
-              class="btn btn-primary"
-              >See More Information</a
-            >
+            <a (click)="movieFeature('similar-movies')" class="btn btn-success">See Related Movies</a>
+            <a (click)="movieFeature('movie-information')" class="btn btn-primary">See More Information</a>
           </div>
         </div>
       </div>
     </div>
     <div class="col-md-3" *ngIf="showMovieInformation">
-      <app-movie-information
-        [movieInformation]="movieDetails"
-      ></app-movie-information>
+      <app-movie-information [movieInformation]="movieDetails"></app-movie-information>
     </div>
     <div class="col-md-3" *ngIf="showRelatedMovies">
       <app-movie-similar [movieId]="movieDetails['id']"></app-movie-similar>
