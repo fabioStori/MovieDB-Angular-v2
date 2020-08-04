@@ -4,7 +4,7 @@
   &:hover {
     opacity: 1;
     transition: 0.3s;
-    background-color: lighten($color: $headerBlue, $amount: 60);
+    background-color: lighten($color: $textBlue, $amount: 60);
   }
 }
 

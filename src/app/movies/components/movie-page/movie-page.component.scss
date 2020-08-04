@@ -2,7 +2,7 @@
 @import "../../../../assets/scss/_variables";
 
 .movie-title {
-  background-color: lighten($color: $headerBlue, $amount: 70);
+  background-color: lighten($color: $textBlue, $amount: 70);
   padding: 20px;
   .card-header {
     background-color: white;
@@ -13,11 +13,11 @@
       padding: 0;
       font-weight: 1000;
       font-size: xx-large;
-      color: $headerBlue;
+      color: $textBlue;
     }
     h4 {
       text-align: center;
-      color: $headerBlue;
+      color: $textBlue;
     }
   }
   img {
@@ -33,16 +33,18 @@
       padding: 0;
       font-weight: 600;
       font-size: x-large;
-      color: $headerBlue;
+      color: $textBlue;
     }
     h3{
       text-align: center;
-      color: $headerBlue;
+      color: $textBlue;
     }
     h4 {
-      padding-top: 10px;
+      padding-top: 4px;
       text-align: center;
-      color: $headerBlue;
+    }
+    .progress{
+      width: 100%;
     }
   }
 }
