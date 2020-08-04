@@ -5,7 +5,7 @@
 @import "../assets/scss/_variables";
 
 .cont {
-  @include mQ(1002px) {
+  @include mQ(1500px) {
     width: 100%;
   }
 

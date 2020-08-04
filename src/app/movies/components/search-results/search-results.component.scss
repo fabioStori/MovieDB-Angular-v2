@@ -1,17 +1,7 @@
 @import "../../../../assets/scss/_mixins";
 @import "../../../../assets/scss/_variables";
 
-//sass --watch src/app/searched-movie/searched-movie.component.scss src/app/searched-movie/searched-movie.component.css
-
-.col-md-3 {
-  .page-title {
-    font-weight: bold;
-    text-align: center;
-    font-size: 30px;
-    font-weight: bold;
-    border-radius: 5px;
-    @include hoverTitle;
-  }
+.col-md-12 {
 
   .searched-box {
     width: 100%;
@@ -19,12 +9,21 @@
     padding: 10px;
     float: center;
     text-align: center;
-  }
 
-  .searched-movies {
-    white-space: normal;
-    font-size: medium;
-    margin: 1px;
-    @include hoverTitle;
+    .searched-movies {
+      white-space: normal;
+      font-size: medium;
+      text-align: center;
+      margin: 0 auto;
+      @include hoverTitle;
+    }
+    .page-title {
+      font-weight: bold;
+      text-align: center;
+      font-size: 30px;
+      font-weight: bold;
+      border-radius: 5px;
+      @include hoverTitle;
+    }
   }
 }

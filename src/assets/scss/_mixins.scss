@@ -1,13 +1,10 @@
-
 // Mixins...
 
 @mixin hoverTitle {
   &:hover {
     opacity: 1;
     transition: 0.3s;
-    background-color: complement(
-      $color: lighten($color: $headerBlue, $amount: 60)
-    );
+    background-color: lighten($color: $headerBlue, $amount: 60);
   }
 }
 
@@ -18,11 +15,3 @@
     }
   }
 }
-@mixin minWidth($arg) {
-  @if length($arg) == 1 {
-    @media screen and (min-width: nth($arg, 1)) {
-      @content;
-    }
-  }
-}
-

@@ -5,7 +5,10 @@
 .col-md-12 {
   min-width: 250px;
   padding: 0px 20px;
-  margin: 0 auto;
+  text-align: center;
+  .card-body {
+    margin: 0 auto;
+  }
 
   h2 {
     text-align: center;
@@ -14,5 +17,4 @@
   img {
     width: 35%;
   }
-
 }
