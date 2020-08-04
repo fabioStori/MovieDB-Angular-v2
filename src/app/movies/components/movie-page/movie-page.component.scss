@@ -1,2 +1,48 @@
-@import "../../assets/scss/_mixins";
-@import "../../assets/scss/_variables";
+@import "../../../../assets/scss/_mixins";
+@import "../../../../assets/scss/_variables";
+
+.movie-title {
+  background-color: lighten($color: $headerBlue, $amount: 70);
+  padding: 20px;
+  .card-header {
+    background-color: white;
+    border-radius: 5px;
+    h1 {
+      text-align: center;
+      margin: 0;
+      padding: 0;
+      font-weight: 1000;
+      font-size: xx-large;
+      color: $headerBlue;
+    }
+    h4 {
+      text-align: center;
+      color: $headerBlue;
+    }
+  }
+  img {
+    width: 100%;
+    border-radius: 8px;
+  }
+}
+.movie-info {
+  .card-header {
+    h2 {
+      text-align: center;
+      margin: 0;
+      padding: 0;
+      font-weight: 600;
+      font-size: x-large;
+      color: $headerBlue;
+    }
+    h3{
+      text-align: center;
+      color: $headerBlue;
+    }
+    h4 {
+      padding-top: 10px;
+      text-align: center;
+      color: $headerBlue;
+    }
+  }
+}

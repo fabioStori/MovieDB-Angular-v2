@@ -7,6 +7,7 @@ import { MovieDetailsResolver } from './resolvers/movie-details.resolver';
 import { MovieInformationComponent } from './components/movie-information/movie-information.component';
 import { MovieSimilarComponent } from './components/movie-similar/movie-similar.component';
 import { MovieSimilarResolver } from './resolvers/movie-similar.resolver';
+import { MoviePageResolver } from './resolvers/movie-page.resolver';
 import { MoviePageComponent } from './components/movie-page/movie-page.component';
 
 const routes: Routes = [
@@ -56,7 +57,11 @@ const routes: Routes = [
       },
     ],
   },
-  { path: 'movie-page/:id', component: MoviePageComponent },
+  {
+    path: 'movie-page/:id',
+    component: MoviePageComponent,
+    resolve: { movie: MoviePageResolver },
+  },
 ];
 
 @NgModule({

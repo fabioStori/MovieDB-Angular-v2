@@ -1,5 +1,41 @@
 <div class="row">
   <div class="col-xs-12">
-    MORE INFORMATION
+    <div class="row">
+      <div class="col-md-4">
+        <div class="card text-center movie-title">
+          <div class="card-header">
+            <h1>{{ movie["title"] }}</h1>
+            <h4>{{ movie["release_date"] }}</h4>
+          </div>
+          <div class="card-body">
+            <img src="{{ posterUrl }}" />
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card text-center movie-info">
+          <div class="card-header">
+            <h2>Overview</h2>
+            <h4>{{ movie["overview"] }}</h4>
+          </div>
+          <div class="card-body">
+            <h3>Vote Average:</h3>
+            <div class="card-text">
+              {{ movie["vote_average"] }}
+            </div>
+            <div class="progress">
+              <div
+                class="progress-bar bg-success"
+                role="progressbar"
+                style="width: {{ voteAverage }}%"
+                aria-valuenow="25"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              ></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

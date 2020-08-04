@@ -5,7 +5,9 @@
   &:hover {
     opacity: 1;
     transition: 0.3s;
-    background-color: complement($color: $headerBlue);
+    background-color: complement(
+      $color: lighten($color: $headerBlue, $amount: 60)
+    );
   }
 }
 

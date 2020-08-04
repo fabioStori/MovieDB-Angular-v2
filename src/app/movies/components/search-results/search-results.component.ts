@@ -11,7 +11,11 @@ export class SearchResultsComponent implements OnInit {
   pageTitle: string = '';
   chosenMovie = {};
 
-  constructor(private route: ActivatedRoute, private router: Router, private search: SearchService) {}
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router,
+    private search: SearchService
+  ) {}
 
   ngOnInit(): void {
     this.route.data.subscribe((data: Data) => {
@@ -35,6 +39,6 @@ export class SearchResultsComponent implements OnInit {
 
   onDetailsClicked(details) {
     this.search.onMovieDetailsClicked(details);
-    this.router.navigate([details['id']], {relativeTo: this.route})
+    this.router.navigate([details['id']], { relativeTo: this.route });
   }
 }
