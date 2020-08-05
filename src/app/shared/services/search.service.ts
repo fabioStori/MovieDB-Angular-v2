@@ -21,19 +21,21 @@ export class SearchService {
     ).then((response) => response.json());
   }
 
-  searchMovieById(id: number) {
+  searchMovieById(movieId: number) {
+    console.log('Searching movies by id');
     return fetch(
-      `https://api.themoviedb.org/3/movie/${id}?api_key=8fa93c9b6c348f8a5cdc2ac737953f7d`
+      `https://api.themoviedb.org/3/movie/${movieId}?api_key=8fa93c9b6c348f8a5cdc2ac737953f7d`
     ).then((response) => response.json());
   }
 
-  searchSimilarMovies(movieId) {
+  searchSimilarMovies(movieId: number) {
+    console.log('Searching similar movies');
     return fetch(
       `https://api.themoviedb.org/3/movie/${movieId}/similar?api_key=8fa93c9b6c348f8a5cdc2ac737953f7d&language=en-US&page=1`
     ).then((response) => response.json());
   }
 
-  searchPopMovies(page:number) {
+  searchPopMovies(page: number) {
     console.log('Searching popular movies');
     return fetch(
       `https://api.themoviedb.org/3/discover/movie?api_key=8fa93c9b6c348f8a5cdc2ac737953f7d&sort_by=popularity.desc&page=${page}`

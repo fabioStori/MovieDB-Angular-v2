@@ -35,6 +35,11 @@ const routes: Routes = [
           },
         ],
       },
+      {
+        path: ':page',
+        component: PopMoviesComponent,
+        resolve: { movie: MovieDetailsResolver },
+      },
     ],
   },
   {
@@ -57,6 +62,11 @@ const routes: Routes = [
             resolve: { similarMovies: MovieSimilarResolver },
           },
         ],
+      },
+      {
+        path: ':page',
+        component: SearchResultsComponent,
+        resolve: { movie: MovieDetailsResolver },
       },
     ],
   },

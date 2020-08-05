@@ -9,10 +9,10 @@ import { SearchService } from '../../../shared/services/search.service';
 export class SearchResultsComponent implements OnInit {
   movies = [];
   chosenMovie = {};
+  searchedTitle = '';
   pageTitle: string = '';
   pageNumber: number = 1;
   totalPagesArray = [];
-  totalPagesLength: number = 1;
 
   constructor(
     private route: ActivatedRoute,
@@ -21,45 +21,29 @@ export class SearchResultsComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    //subscribing to searched title
     this.route.data.subscribe((data: Data) => {
       this.refreshSearchResults(data);
+    });
+    //subscribing to page number param
+    this.route.queryParams.subscribe((data: Data) => {
+      this.searchedTitle = this.route.snapshot.params['searchTitle'];
+      this.search
+        .searchMovieByTitle(this.searchedTitle, data['page'])
+        .then((data: Data) => {
+          this.movies = data['results'];
+        });
     });
   }
 
   refreshSearchResults(searchResults) {
-    this.totalPagesLength = searchResults['movies']['total_pages'];
-    this.totalPagesArray = Array(this.totalPagesLength)
-      .fill(1)
-      .map((x, i) => i);
-    this.movies = searchResults['movies']['results'];
+    //refreshing page title with the title searched, the number of results (number os pages) and the search results
+    this.totalPagesArray = Array.from(
+      Array(searchResults['movies']['total_pages']),
+      (_, i) => i + 1
+    );
     this.pageTitle =
       'Showing results for: ' + this.route.snapshot.params['searchTitle'];
-  }
-
-  onDetailsClicked(details) {
-    this.router.navigate([details['id']], { relativeTo: this.route });
-  }
-
-  onNextPage() {
-    this.pageNumber++;
-    this.search
-      .searchMovieByTitle(
-        this.route.snapshot.params['searchTitle'],
-        this.pageNumber
-      )
-      .then((results) => {
-        this.movies = results['results'];
-      });
-  }
-  onPreviousPage() {
-    this.pageNumber--;
-    this.search
-      .searchMovieByTitle(
-        this.route.snapshot.params['searchTitle'],
-        this.pageNumber
-      )
-      .then((results) => {
-        this.movies = results['results'];
-      });
+    this.movies = searchResults['movies']['results'];
   }
 }

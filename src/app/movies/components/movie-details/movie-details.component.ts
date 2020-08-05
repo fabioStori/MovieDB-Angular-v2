@@ -28,12 +28,8 @@ export class MovieDetailsComponent implements OnInit {
   movieFeature(feature: string) {
     if (feature === 'similar-movies') {
       this.router.navigate(['similar'],  {relativeTo: this.route})
-      // this.showRelatedMovies = !this.showRelatedMovies;
-      // this.showMovieInformation = false;
     } else if (feature === 'movie-information') {
       this.router.navigate(['info'],  {relativeTo: this.route})
-      // this.showRelatedMovies = false;
-      // this.showMovieInformation = !this.showMovieInformation;
     }
   }
 }

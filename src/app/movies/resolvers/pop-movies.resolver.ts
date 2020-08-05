@@ -18,6 +18,7 @@ export class PopMoviesResolver implements Resolve<{}> {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
   ): {} | Observable<{}> | Promise<{}> {
-    return this.search.searchPopMovies(1);
+
+    return this.search.searchPopMovies(route.queryParams['page']);
   }
 }
