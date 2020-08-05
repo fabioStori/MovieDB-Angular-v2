@@ -10,9 +10,7 @@ export class MovieSimilarComponent implements OnInit {
   posterUrl = [];
   foundedSimilarMovies: boolean = false;
 
-  constructor(
-    private route: ActivatedRoute,
-  ) {}
+  constructor(private route: ActivatedRoute) {}
 
   ngOnInit(): void {
     this.route.data.subscribe((data: Data) => {

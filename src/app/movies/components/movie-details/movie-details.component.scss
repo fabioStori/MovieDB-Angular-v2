@@ -2,13 +2,37 @@
 @import "../../../../assets/scss/_variables";
 // sass --watch src/app/searched-movie/movie-details/movie-details.component.scss src/app/searched-movie/movie-details/movie-details.component.css
 
-.col-md-8 {
+.col-md-9 {
   .card {
-    width: 100%;
-    text-align: center;
-
+    width: auto;
+    border-radius: 15px;
+    padding: 0px;
     img {
-      width: 40%;
+      padding: 10px;
+      border-radius: 15px;
+      width: auto;
+    }
+    .card-title {
+      font-size: xx-large;
+      padding-top: 15px;
+      font-weight: 700;
+      color: $textBlue;
+    }
+    .card-text {
+      padding: 15px;
+      font-size: large;
+      font-weight: 400;
+      white-space: normal;
+    }
+    .btns {
+      padding-bottom: 15px;
+      .btn {
+        border-radius: 10px;
+        color: white;
+        font-size: large;
+        padding: 5px;
+        margin-bottom: 5px;
+      }
     }
   }
 }

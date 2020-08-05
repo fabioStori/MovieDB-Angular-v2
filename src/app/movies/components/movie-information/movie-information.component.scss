@@ -8,12 +8,24 @@
   text-align: center;
   .card-body {
     margin: 0 auto;
+    > ul{
+      text-align: left;
+      font-size: medium;
+      padding-left: 0;
+    }
+    .btn{
+      text-align: center;
+      margin: 0 auto;
+      color: white;
+      border-radius: 5px;
+    }
   }
-
   h2 {
     text-align: center;
+    padding-top: 6px;
+    color: $textBlue;
+    font-weight: bold;
   }
-
   img {
     width: 35%;
   }

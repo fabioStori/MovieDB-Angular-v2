@@ -14,6 +14,12 @@
           <h2 class="card-title">{{ movie["title"] }}</h2>
           <p class="card-text">{{ movie["overview"] }}</p>
         </div>
+        <button
+          class="btn btn-primary goto-page"
+          [routerLink]="['/movie-page', movie['id']]"
+        >
+          Go to Movie Page
+        </button>
       </div>
     </div>
   </div>
