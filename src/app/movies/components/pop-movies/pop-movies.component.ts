@@ -12,7 +12,6 @@ export class PopMoviesComponent implements OnInit {
   pageNumber: number = 1;
   totalPagesArray = [];
   totalPagesLength: number = 1;
-  pageTitle: string = '';
 
   constructor(
     private route: ActivatedRoute,
@@ -22,44 +21,39 @@ export class PopMoviesComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.data.subscribe((data: Data) => {
-        this.refreshSearchResults(data);
+      this.refreshSearchResults(data);
     });
   }
 
   refreshSearchResults(searchResults) {
     this.totalPagesLength = searchResults['movies']['total_pages'];
-    this.totalPagesArray = Array(this.totalPagesLength).fill(1).map((x,i)=>i);
+    this.totalPagesArray = Array(this.totalPagesLength)
+      .fill(1)
+      .map((x, i) => i);
     this.movies = searchResults['movies']['results'];
-    this.pageTitle = 'Showing Popular Movies';
-
   }
 
   onDetailsClicked(details) {
-    this.search.onMovieDetailsClicked(details);
     this.router.navigate([details['id']], { relativeTo: this.route });
   }
 
   onNextPage() {
     this.pageNumber++;
     this.search
-      .searchMovieByTitle(
-        this.route.snapshot.params['searchTitle'],
+      .searchPopMovies(
         this.pageNumber
       )
       .then((results) => {
-        console.log(results);
         this.movies = results['results'];
       });
   }
   onPreviousPage() {
     this.pageNumber--;
     this.search
-      .searchMovieByTitle(
-        this.route.snapshot.params['searchTitle'],
+      .searchPopMovies(
         this.pageNumber
       )
       .then((results) => {
-        console.log(results);
         this.movies = results['results'];
       });
   }

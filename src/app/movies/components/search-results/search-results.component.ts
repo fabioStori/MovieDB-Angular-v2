@@ -9,10 +9,10 @@ import { SearchService } from '../../../shared/services/search.service';
 export class SearchResultsComponent implements OnInit {
   movies = [];
   chosenMovie = {};
+  pageTitle: string = '';
   pageNumber: number = 1;
   totalPagesArray = [];
   totalPagesLength: number = 1;
-  pageTitle: string = '';
 
   constructor(
     private route: ActivatedRoute,
@@ -22,30 +22,21 @@ export class SearchResultsComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.data.subscribe((data: Data) => {
-      if (data['routeName'] === 'Popular movies')
-        this.refreshSearchResults(data, 'pop-movies');
-      else if (data['routeName'] === 'Searched movies')
-        this.refreshSearchResults(data, 'title-search');
+      this.refreshSearchResults(data);
     });
   }
 
-  refreshSearchResults(searchResults, searchType: string) {
+  refreshSearchResults(searchResults) {
     this.totalPagesLength = searchResults['movies']['total_pages'];
-    console.log(this.totalPagesLength)
-    this.totalPagesArray = Array(this.totalPagesLength).fill(1).map((x,i)=>i);
-
-    if (searchType === 'pop-movies') {
-      this.movies = searchResults['movies']['results'];
-      this.pageTitle = 'Showing Popular Movies';
-    } else {
-      this.movies = searchResults['movies']['results'];
-      this.pageTitle =
-        'Showing results for: ' + this.route.snapshot.params['searchTitle'];
-    }
+    this.totalPagesArray = Array(this.totalPagesLength)
+      .fill(1)
+      .map((x, i) => i);
+    this.movies = searchResults['movies']['results'];
+    this.pageTitle =
+      'Showing results for: ' + this.route.snapshot.params['searchTitle'];
   }
 
   onDetailsClicked(details) {
-    this.search.onMovieDetailsClicked(details);
     this.router.navigate([details['id']], { relativeTo: this.route });
   }
 
@@ -57,7 +48,6 @@ export class SearchResultsComponent implements OnInit {
         this.pageNumber
       )
       .then((results) => {
-        console.log(results);
         this.movies = results['results'];
       });
   }
@@ -69,7 +59,6 @@ export class SearchResultsComponent implements OnInit {
         this.pageNumber
       )
       .then((results) => {
-        console.log(results);
         this.movies = results['results'];
       });
   }

@@ -1,16 +1,17 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { SearchResultsComponent } from './components/search-results/search-results.component';
-import { SearchResultsResolver } from './resolvers/search-results.resolver';
 import { PopMoviesComponent } from './components/pop-movies/pop-movies.component';
-import { PopMoviesResolver } from './resolvers/pop-movies.resolver';
 import { MovieDetailsComponent } from './components/movie-details/movie-details.component';
-import { MovieDetailsResolver } from './resolvers/movie-details.resolver';
 import { MovieInformationComponent } from './components/movie-information/movie-information.component';
 import { MovieSimilarComponent } from './components/movie-similar/movie-similar.component';
+import { MoviePageComponent } from './components/movie-page/movie-page.component';
+
+import { SearchResultsResolver } from './resolvers/search-results.resolver';
+import { PopMoviesResolver } from './resolvers/pop-movies.resolver';
+import { MovieDetailsResolver } from './resolvers/movie-details.resolver';
 import { MovieSimilarResolver } from './resolvers/movie-similar.resolver';
 import { MoviePageResolver } from './resolvers/movie-page.resolver';
-import { MoviePageComponent } from './components/movie-page/movie-page.component';
 
 const routes: Routes = [
   {
