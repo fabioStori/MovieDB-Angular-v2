@@ -3,10 +3,11 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: '',
-    loadChildren: './home/home.module#HomeModule',
-  },{
     path: 'search',
+    loadChildren: './movies/movies.module#MoviesModule',
+  },
+  {
+    path: 'pop-movies',
     loadChildren: './movies/movies.module#MoviesModule',
   },
 ];

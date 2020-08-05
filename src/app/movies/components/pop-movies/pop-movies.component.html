@@ -11,9 +11,9 @@
             >«</a
           >
         </li> -->
-        <li *ngFor="let page of totalPagesArray | slice: 0:20">
+        <li *ngFor="let page of totalPagesArray">
           <a
-            routerLink="/search/{{ searchedTitle }}"
+            routerLink="/pop-movies"
             [queryParams]="{ page: page }"
             routerLinkActive="active"
             (click)="pageNumber = page"
@@ -33,7 +33,7 @@
     </div>
     <div class="searched-box">
       <h3 class="page-title">
-        {{ pageTitle }}
+        Showing Popular Movies
       </h3>
       <button
         class="btn btn-light searched-movies"

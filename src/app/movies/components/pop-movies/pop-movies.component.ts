@@ -3,14 +3,12 @@ import { ActivatedRoute, Data, Router } from '@angular/router';
 import { SearchService } from '../../../shared/services/search.service';
 
 @Component({
-  selector: 'app-search-results',
-  templateUrl: './search-results.component.html',
+  selector: 'app-pop-movies',
+  templateUrl: './pop-movies.component.html',
 })
-export class SearchResultsComponent implements OnInit {
+export class PopMoviesComponent implements OnInit {
   movies = [];
   chosenMovie = {};
-  searchedTitle = '';
-  pageTitle: string = '';
   pageNumber: number = 1;
   totalPagesArray = [];
 
@@ -27,23 +25,15 @@ export class SearchResultsComponent implements OnInit {
     });
     //subscribing to page number param
     this.route.queryParams.subscribe((data: Data) => {
-      this.searchedTitle = this.route.snapshot.params['searchTitle'];
-      this.search
-        .searchMovieByTitle(this.searchedTitle, data['page'])
-        .then((data: Data) => {
-          this.movies = data['results'];
-        });
+      this.search.searchPopMovies(data['page']).then((data: Data) => {
+        this.movies = data['results'];
+      });
     });
   }
 
   refreshSearchResults(searchResults) {
-    //refreshing page title with the title searched, the number of results (number os pages) and the search results
-    this.totalPagesArray = Array.from(
-      Array(searchResults['movies']['total_pages']),
-      (_, i) => i + 1
-    );
-    this.pageTitle =
-      'Showing results for: ' + this.route.snapshot.params['searchTitle'];
+    //refreshing the number of results (number os pages) and the search results
     this.movies = searchResults['movies']['results'];
+    this.totalPagesArray = Array.from(Array(10), (_, i) => i + 1);
   }
 }
