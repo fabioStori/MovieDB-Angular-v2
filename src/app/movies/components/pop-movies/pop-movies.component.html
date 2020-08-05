@@ -3,12 +3,13 @@
     <div class="wrapper">
       <ul class="pagination">
         <li><a (click)="onPreviousPage()">«</a></li>
-        <li *ngFor="let page of totalPagesArray | slice: 0:20">
-          <a>{{ page }}</a>
-        </li>
+        <li *ngFor="let page of totalPagesArray  | slice: 0:20"><a (click)="onPageNumberClick()">{{page}}</a></li>
         <li><a (click)="onNextPage()">»</a></li>
       </ul>
     </div>
+
+    <!-- <button class="btn btn-dark" (click)="onPreviousPage()">Previous Page</button>
+    <button class="btn btn-dark" (click)="onNextPage()">Next Page</button> -->
     <div class="searched-box">
       <h3 class="page-title">
         {{ pageTitle }}

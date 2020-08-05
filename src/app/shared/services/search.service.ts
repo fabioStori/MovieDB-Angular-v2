@@ -14,10 +14,10 @@ export class SearchService {
     return this.movieDetails;
   }
 
-  searchMovieByTitle(title: string) {
+  searchMovieByTitle(title: string, page: number) {
     console.log('Searching movie');
     return fetch(
-      `https://api.themoviedb.org/3/search/movie?&api_key=8fa93c9b6c348f8a5cdc2ac737953f7d&query=${title}`
+      `https://api.themoviedb.org/3/search/movie?&api_key=8fa93c9b6c348f8a5cdc2ac737953f7d&query=${title}&page=${page}`
     ).then((response) => response.json());
   }
 
@@ -33,10 +33,10 @@ export class SearchService {
     ).then((response) => response.json());
   }
 
-  searchPopMovies() {
+  searchPopMovies(page:number) {
     console.log('Searching popular movies');
     return fetch(
-      'https://api.themoviedb.org/3/discover/movie?api_key=8fa93c9b6c348f8a5cdc2ac737953f7d&sort_by=popularity.desc'
+      `https://api.themoviedb.org/3/discover/movie?api_key=8fa93c9b6c348f8a5cdc2ac737953f7d&sort_by=popularity.desc&page=${page}`
     ).then((response) => response.json());
   }
 }

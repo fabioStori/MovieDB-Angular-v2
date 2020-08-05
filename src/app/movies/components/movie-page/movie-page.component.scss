@@ -35,7 +35,7 @@
       font-size: x-large;
       color: $textBlue;
     }
-    h3{
+    h3 {
       text-align: center;
       color: $textBlue;
     }
@@ -43,8 +43,10 @@
       padding-top: 4px;
       text-align: center;
     }
-    .progress{
-      width: 100%;
-    }
+  }
+  .card-text {
+    font-size: large;
+    font-weight: 700;
+    color: rgb(16, 97, 0);
   }
 }
