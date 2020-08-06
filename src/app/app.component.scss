@@ -4,11 +4,45 @@
 @import "../assets/scss/_mixins";
 @import "../assets/scss/_variables";
 
-.cont {
-  @include mQ(1500px) {
-    width: 100%;
-  }
+* {
+  box-sizing: border-box;
+}
 
-  width: 75%;
-  margin: 0 auto;
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  position: relative;
+}
+
+.main-container {
+  min-height: 100vh;
+  /* will cover the 100% of viewport */
+  overflow: hidden;
+  display: block;
+  position: relative;
+  padding-bottom: 100px;
+  /* height of your footer */
+  background-color: rgb(240, 240, 240);
+  // padding-top: 10px;
+  // padding-bottom: 10px;
+
+  .cont {
+    @include mQ(1500px) {
+      width: 100%;
+    }
+
+    width: 75%;
+    margin: 0 auto;
+  }
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
 }
