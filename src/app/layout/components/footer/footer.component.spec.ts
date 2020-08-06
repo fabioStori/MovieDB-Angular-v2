@@ -1,5 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { ComponentFixture, TestBed, async } from '@angular/core/testing';
 import { FooterComponent } from './footer.component';
 
 describe('FooterComponent', () => {
@@ -8,18 +7,24 @@ describe('FooterComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ FooterComponent ]
-    })
-    .compileComponents();
+      declarations: [FooterComponent],
+    });
   }));
-
-  beforeEach(() => {
+  beforeEach(async(() => {
     fixture = TestBed.createComponent(FooterComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
-  });
+  }));
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  describe('# initializing', () => {
+    test('should create', () => {
+      expect(component).toBeTruthy();
+    });
+
+    test('should call methods from ngOnInit', () => {
+      const onInit = jest.spyOn(component, 'ngOnInit');
+      component.ngOnInit();
+      expect(onInit).toHaveBeenCalled();
+    });
   });
 });

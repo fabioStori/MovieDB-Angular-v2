@@ -6,7 +6,8 @@
 */
 {
   "files": [],
-  "references": [{
+  "references": [
+    {
       "path": "./tsconfig.app.json"
     },
     {
@@ -15,5 +16,6 @@
   ],
   "compilerOptions": {
     "experimentalDecorators": true,
+    "types": ["jest"]
   }
 }
