@@ -3,7 +3,7 @@ import { PopMoviesComponent } from './pop-movies.component';
 
 import { RouterTestingModule } from '@angular/router/testing';
 
-describe('HeaderComponent', () => {
+describe('PopMoviesComponent', () => {
   let component: PopMoviesComponent;
   let fixture: ComponentFixture<PopMoviesComponent>;
 
@@ -11,19 +11,16 @@ describe('HeaderComponent', () => {
     TestBed.configureTestingModule({
       declarations: [PopMoviesComponent],
       imports: [RouterTestingModule],
-    });
-  }));
-  beforeEach(async(() => {
+    }).compileComponents();
+
     fixture = TestBed.createComponent(PopMoviesComponent);
     component = fixture.componentInstance;
-    fixture.detectChanges();
   }));
 
+  test('should create', () => {
+    expect(component).toBeTruthy();
+  });
   describe('# initializing', () => {
-    it('should create', () => {
-      expect(component).toBeTruthy();
-    });
-
     test('should call methods from ngOnInit', () => {
       const onInit = jest.spyOn(component, 'ngOnInit');
       component.ngOnInit();

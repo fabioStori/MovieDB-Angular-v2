@@ -11,19 +11,16 @@ describe('HeaderComponent', () => {
     TestBed.configureTestingModule({
       declarations: [HeaderComponent],
       imports: [RouterTestingModule],
-    });
-  }));
-  beforeEach(async(() => {
+    }).compileComponents();
+
     fixture = TestBed.createComponent(HeaderComponent);
     component = fixture.componentInstance;
-    fixture.detectChanges();
   }));
 
+  test('should create', () => {
+    expect(component).toBeTruthy();
+  });
   describe('# initializing', () => {
-    test('should create', () => {
-      expect(component).toBeTruthy();
-    });
-
     test('should call methods from ngOnInit', () => {
       const onInit = jest.spyOn(component, 'ngOnInit');
       component.ngOnInit();

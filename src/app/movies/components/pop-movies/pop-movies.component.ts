@@ -33,7 +33,6 @@ export class PopMoviesComponent implements OnInit {
 
   refreshSearchResults(searchResults) {
     //refreshing the number of results (number os pages) and the search results
-
     this.movies = searchResults['movies']['results'];
     this.totalPagesArray = Array.from(Array(10), (_, i) => i + 1);
   }
