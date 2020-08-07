@@ -20,6 +20,7 @@ describe('PopMoviesComponent', () => {
   test('should create', () => {
     expect(component).toBeTruthy();
   });
+
   describe('# initializing', () => {
     test('should call methods from ngOnInit', () => {
       const onInit = jest.spyOn(component, 'ngOnInit');

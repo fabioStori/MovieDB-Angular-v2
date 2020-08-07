@@ -26,7 +26,7 @@ export class SearchService {
     ).then((response) => response.json());
   }
 
-  searchPopMovies(page: number) {
+  public searchPopMovies(page: number) {
     console.log('Searching popular movies');
     return fetch(
       `https://api.themoviedb.org/3/discover/movie?api_key=8fa93c9b6c348f8a5cdc2ac737953f7d&sort_by=popularity.desc&page=${page}`
