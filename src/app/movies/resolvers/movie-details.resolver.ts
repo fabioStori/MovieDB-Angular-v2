@@ -5,7 +5,7 @@ import {
 } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
 import { Injectable } from '@angular/core';
-import { SearchService } from 'src/app/shared/services/search.service';
+import { SearchService } from '../../shared/services/search.service';
 
 @Injectable({
   providedIn: 'root',
