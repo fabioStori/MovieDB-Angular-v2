@@ -23,8 +23,13 @@
             <div class="card-text">{{ movie["vote_average"] }} / 10</div>
           </div>
           <div class="progress" style="margin: 0px 10px 10px 10px;">
-            <div class="progress-bar bg-success" role="progressbar" style="width: {{ voteAverage }}%" aria-valuemin="0"
-              aria-valuemax="100"></div>
+            <div
+              class="progress-bar bg-success"
+              role="progressbar"
+              style="width: {{ voteAverage }}%"
+              aria-valuemin="0"
+              aria-valuemax="100"
+            ></div>
           </div>
           <div class="card-body">
             <h3>VOTE!</h3>
@@ -35,14 +40,23 @@
         </div>
       </div>
       <div class="col-md-4">
-        <div *ngIf="collectionPosterUrl" class="card text-center collection-info">
+        <div
+          *ngIf="collectionPosterUrl"
+          class="card text-center collection-info"
+        >
           <div class="card-header">
             <h2>This movie belongs to the following collection:</h2>
             <h4>{{ movie["belongs_to_collection"]["name"] }}</h4>
-            <img class="img-fluid card-img-middle" [src]="collectionPosterUrl" />
+            <img
+              class="img-fluid card-img-middle"
+              [src]="collectionPosterUrl"
+            />
           </div>
         </div>
-        <div *ngIf="!collectionPosterUrl" class="card text-center collection-info">
+        <div
+          *ngIf="!collectionPosterUrl"
+          class="card text-center collection-info"
+        >
           <div class="card-header">
             <h2>This movie does not belong to any collection.</h2>
           </div>
@@ -50,9 +64,14 @@
         <div class="card text-center companies-info">
           <div class="card-header">
             <h2>Made by:</h2>
-            <div *ngFor="let companie of movie['production_companies']; let i=index">
+            <div
+              *ngFor="
+                let companie of movie['production_companies'];
+                let i = index
+              "
+            >
               <h4>
-                {{ companie['name'] }}
+                {{ companie["name"] }}
               </h4>
             </div>
           </div>
