@@ -1,20 +1,12 @@
-<div class="header">
+<div>
   <nav class="navbar navbar-light bg-light" style="margin: 0;">
     <h1 class="home" (click)="headerFeatureClicked('home')">Home</h1>
     <h3 class="popular-movies" (click)="headerFeatureClicked('popular-movies')">
       Popular Movies
     </h3>
 
-    <input
-      type="text"
-      class="form-control mr-sm-2"
-      placeholder="Movie Title"
-      #searchedTitle
-    />
-    <button
-      class="btn btn-outline-success my-2 my-sm-0"
-      (click)="headerFeatureClicked('search')"
-    >
+    <input type="text" class="form-control mr-sm-2" placeholder="Movie Title" #searchedTitle />
+    <button class="btn btn-outline-success my-2 my-sm-0" (click)="headerFeatureClicked('search')">
       Search
     </button>
   </nav>
