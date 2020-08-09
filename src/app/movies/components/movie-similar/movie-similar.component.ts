@@ -3,12 +3,12 @@ import { ActivatedRoute, Data } from '@angular/router';
 
 @Component({
   selector: 'app-movie-similar',
-  templateUrl: './movie-similar.component.html',
+  templateUrl: './movie-similar.component.html'
 })
 export class MovieSimilarComponent implements OnInit {
   similarMovies = [];
   posterUrl = [];
-  foundedSimilarMovies: boolean = false;
+  foundedSimilarMovies = false;
 
   constructor(private route: ActivatedRoute) {}
 

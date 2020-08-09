@@ -1,14 +1,17 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable @typescript-eslint/ban-types */
+
 import {
   Resolve,
   ActivatedRouteSnapshot,
-  RouterStateSnapshot,
+  RouterStateSnapshot
 } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
 import { Injectable } from '@angular/core';
 import { SearchService } from '../../shared/services/search.service';
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: 'root'
 })
 export class MovieSimilarResolver implements Resolve<{}> {
   constructor(private search: SearchService) {}
@@ -17,6 +20,6 @@ export class MovieSimilarResolver implements Resolve<{}> {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
   ): {} | Observable<{}> | Promise<{}> {
-    return this.search.searchSimilarMovies(route.parent.params['id'])
+    return this.search.searchSimilarMovies(route.parent.params['id']);
   }
 }

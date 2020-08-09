@@ -4,15 +4,16 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'],
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
   headerFeature = {};
-  showResults: boolean = false;
+  showResults = false;
 
   constructor(private router: Router) {}
 
-  headerFeatureClicked(event) {
+  // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
+  headerFeatureClicked(event): void {
     this.headerFeature = event;
     if (event.feature === 'home') {
       this.router.navigate(['/home']);

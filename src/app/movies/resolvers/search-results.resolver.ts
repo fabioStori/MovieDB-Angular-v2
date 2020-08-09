@@ -1,15 +1,17 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable @typescript-eslint/ban-types */
 import {
   Resolve,
   ActivatedRouteSnapshot,
   RouterStateSnapshot,
-  ActivatedRoute,
+  ActivatedRoute
 } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
 import { Injectable } from '@angular/core';
 import { SearchService } from '../../shared/services/search.service';
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: 'root'
 })
 export class SearchResultsResolver implements Resolve<{}> {
   constructor(private route: ActivatedRoute, private search: SearchService) {}
@@ -18,6 +20,9 @@ export class SearchResultsResolver implements Resolve<{}> {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
   ): {} | Observable<{}> | Promise<{}> {
-    return this.search.searchMovieByTitle(route.params['searchTitle'], route.queryParams['page']);
+    return this.search.searchMovieByTitle(
+      route.params['searchTitle'],
+      route.queryParams['page']
+    );
   }
 }

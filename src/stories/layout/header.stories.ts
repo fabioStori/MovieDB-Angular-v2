@@ -9,11 +9,11 @@ const RouterModuleLayoutImport = [
       {
         path: '',
         loadChildren: () =>
-          import('../../app/layout/layout.module').then((m) => m.LayoutModule),
-      },
+          import('../../app/layout/layout.module').then((m) => m.LayoutModule)
+      }
     ],
     { useHash: true }
-  ),
+  )
 ];
 
 storiesOf('Header', module)
@@ -21,7 +21,7 @@ storiesOf('Header', module)
     moduleMetadata({
       declarations: [HeaderComponent],
       imports: [...RouterModuleLayoutImport],
-      providers: [{ provide: APP_BASE_HREF, useValue: '/' }],
+      providers: [{ provide: APP_BASE_HREF, useValue: '/' }]
     })
   )
   .add('default', () => {
@@ -35,6 +35,6 @@ storiesOf('Header', module)
           </div>
         </header>
     `,
-      props: {},
+      props: {}
     };
   });

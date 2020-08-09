@@ -1,9 +1,9 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Data } from '@angular/router';
 
 @Component({
   selector: 'app-movie-page',
-  templateUrl: './movie-page.component.html',
+  templateUrl: './movie-page.component.html'
 })
 export class MoviePageComponent implements OnInit {
   movie = {};
@@ -23,7 +23,7 @@ export class MoviePageComponent implements OnInit {
     });
   }
 
-  refreshData(data: Data) {
+  refreshData(data: Data): void {
     this.movie = data['movie'];
     this.voteAverage = `${this.movie['vote_average'] * 10}`;
     this.posterUrl = `https://image.tmdb.org/t/p/w500/${this.movie['poster_path']}`;

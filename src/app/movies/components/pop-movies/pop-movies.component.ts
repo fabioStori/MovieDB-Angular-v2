@@ -4,12 +4,12 @@ import { SearchService } from '../../../shared/services/search.service';
 
 @Component({
   selector: 'app-pop-movies',
-  templateUrl: './pop-movies.component.html',
+  templateUrl: './pop-movies.component.html'
 })
 export class PopMoviesComponent implements OnInit {
   movies = [];
   chosenMovie = {};
-  pageNumber: number = 1;
+  pageNumber = 1;
   totalPagesArray = [];
 
   constructor(
@@ -31,7 +31,8 @@ export class PopMoviesComponent implements OnInit {
     });
   }
 
-  refreshSearchResults(searchResults) {
+  // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
+  refreshSearchResults(searchResults): void {
     //refreshing the number of results (number os pages) and the search results
     this.movies = searchResults['movies']['results'];
     this.totalPagesArray = Array.from(Array(10), (_, i) => i + 1);

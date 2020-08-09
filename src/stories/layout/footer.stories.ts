@@ -4,7 +4,7 @@ import { FooterComponent } from '../../app/layout/components/footer/footer.compo
 storiesOf('Footer', module)
   .addDecorator(
     moduleMetadata({
-      declarations: [FooterComponent],
+      declarations: [FooterComponent]
     })
   )
   .add('storybook test', () => {
@@ -13,7 +13,7 @@ storiesOf('Footer', module)
         <app-footer [storyTestText]="storyTestText"></app-footer>
     `,
       props: {
-        storyTestText: 'STORYBOOK TEST',
-      },
+        storyTestText: 'STORYBOOK TEST'
+      }
     };
   });

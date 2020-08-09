@@ -4,7 +4,7 @@ import { SearchService } from '../../../shared/services/search.service';
 
 @Component({
   selector: 'app-movie-information',
-  templateUrl: './movie-information.component.html',
+  templateUrl: './movie-information.component.html'
 })
 export class MovieInformationComponent implements OnInit {
   movieInformation = {};
@@ -20,7 +20,7 @@ export class MovieInformationComponent implements OnInit {
       this.movieInformation = results;
     });
   }
-  onMoreInformationClick() {
+  onMoreInformationClick(): void {
     this.router.navigate(['/movie-page', this.movieId]);
   }
 }

@@ -18,7 +18,7 @@ const routes: Routes = [
     path: 'pop-movies',
     component: PopMoviesComponent,
     data: {
-      routeName: 'Popular movies',
+      routeName: 'Popular movies'
     },
     resolve: { movies: PopMoviesResolver },
     children: [
@@ -31,22 +31,22 @@ const routes: Routes = [
           {
             path: 'similar',
             component: MovieSimilarComponent,
-            resolve: { similarMovies: MovieSimilarResolver },
-          },
-        ],
+            resolve: { similarMovies: MovieSimilarResolver }
+          }
+        ]
       },
       {
         path: ':page',
         component: PopMoviesComponent,
-        resolve: { movie: MovieDetailsResolver },
-      },
-    ],
+        resolve: { movie: MovieDetailsResolver }
+      }
+    ]
   },
   {
     path: 'search/:searchTitle',
     component: SearchResultsComponent,
     data: {
-      routeName: 'Searched movies',
+      routeName: 'Searched movies'
     },
     resolve: { movies: SearchResultsResolver },
     children: [
@@ -59,26 +59,26 @@ const routes: Routes = [
           {
             path: 'similar',
             component: MovieSimilarComponent,
-            resolve: { similarMovies: MovieSimilarResolver },
-          },
-        ],
+            resolve: { similarMovies: MovieSimilarResolver }
+          }
+        ]
       },
       {
         path: ':page',
         component: SearchResultsComponent,
-        resolve: { movie: MovieDetailsResolver },
-      },
-    ],
+        resolve: { movie: MovieDetailsResolver }
+      }
+    ]
   },
   {
     path: 'movie-page/:id',
     component: MoviePageComponent,
-    resolve: { movie: MoviePageResolver },
-  },
+    resolve: { movie: MoviePageResolver }
+  }
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule],
+  exports: [RouterModule]
 })
 export class MoviesRoutingModule {}

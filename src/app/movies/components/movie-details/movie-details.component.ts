@@ -3,13 +3,13 @@ import { ActivatedRoute, Data, Router } from '@angular/router';
 
 @Component({
   selector: 'app-movie-details',
-  templateUrl: './movie-details.component.html',
+  templateUrl: './movie-details.component.html'
 })
 export class MovieDetailsComponent implements OnInit {
   movieDetails = {};
-  posterUrl: string = '';
-  showRelatedMovies: boolean = false;
-  showMovieInformation: boolean = false;
+  posterUrl = '';
+  showRelatedMovies = false;
+  showMovieInformation = false;
   relatedMovies = {};
 
   constructor(private route: ActivatedRoute, private router: Router) {}
@@ -25,11 +25,11 @@ export class MovieDetailsComponent implements OnInit {
     });
   }
 
-  movieFeature(feature: string) {
+  movieFeature(feature: string): void {
     if (feature === 'similar-movies') {
-      this.router.navigate(['similar'],  {relativeTo: this.route})
+      this.router.navigate(['similar'], { relativeTo: this.route });
     } else if (feature === 'movie-information') {
-      this.router.navigate(['info'],  {relativeTo: this.route})
+      this.router.navigate(['info'], { relativeTo: this.route });
     }
   }
 }

@@ -21,10 +21,10 @@ import { AppRoutingModule } from './app-routing.module';
     BrowserModule,
     FormsModule,
 
-    AppRoutingModule,
+    AppRoutingModule
   ],
   declarations: [AppComponent],
   bootstrap: [AppComponent],
-  providers: [],
+  providers: []
 })
 export class AppModule {}

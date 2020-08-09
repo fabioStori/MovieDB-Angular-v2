@@ -8,19 +8,18 @@ const RouterModuleMoviesImport = [
       {
         path: '',
         loadChildren: () =>
-          import('../../app/movies/movies.module').then((m) => m.MoviesModule),
-      },
+          import('../../app/movies/movies.module').then((m) => m.MoviesModule)
+      }
     ],
     { useHash: true }
-  ),
+  )
 ];
-
 
 storiesOf('MovieInformationComponent', module)
   .addDecorator(
     moduleMetadata({
       declarations: [MovieInformationComponent],
-      imports: [...RouterModuleMoviesImport],
+      imports: [...RouterModuleMoviesImport]
     })
   )
   .add('default', () => {
@@ -28,6 +27,6 @@ storiesOf('MovieInformationComponent', module)
       template: `
         <app-movie-information></app-movie-information>
     `,
-      props: {},
+      props: {}
     };
   });
