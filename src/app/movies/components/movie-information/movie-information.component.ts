@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router, Data } from '@angular/router';
 import { SearchService } from '../../../shared/services/search.service';
 
 @Component({
@@ -16,8 +16,10 @@ export class MovieInformationComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.search.searchMovieById(+this.movieId).then((results = {}) => {
-      this.movieInformation = results;
+    this.search.searchMovieById(+this.movieId).then((results) => {
+      results.subscribe((data: Data) => {
+        this.movieInformation = data;
+      });
     });
   }
   onMoreInformationClick(): void {

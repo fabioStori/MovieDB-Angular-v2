@@ -10,6 +10,7 @@ import { MoviesModule } from './movies/movies.module';
 import { SharedModule } from './shared/shared.module';
 
 import { AppRoutingModule } from './app-routing.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   imports: [
@@ -20,6 +21,7 @@ import { AppRoutingModule } from './app-routing.module';
 
     BrowserModule,
     FormsModule,
+    HttpClientModule,
 
     AppRoutingModule
   ],

@@ -25,7 +25,7 @@ export class PopMoviesComponent implements OnInit {
     });
     //subscribing to page number param
     this.route.queryParams.subscribe((data: Data) => {
-      this.search.searchPopMovies(data['page']).then((data: Data) => {
+      this.search.searchPopMovies(data['page']).subscribe((data: Data) => {
         this.movies = data['results'];
       });
     });

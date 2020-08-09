@@ -5,7 +5,5 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './home-page.component.html'
 })
 export class HomePageComponent implements OnInit {
-  ngOnInit(): void {
-    console.log('baaad');
-  }
+  ngOnInit(): void {}
 }
