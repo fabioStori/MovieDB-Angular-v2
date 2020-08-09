@@ -9,11 +9,11 @@ const RouterModuleMoviesImport = [
       {
         path: '',
         loadChildren: () =>
-          import('../../app/movies/movies.module').then((m) => m.MoviesModule),
-      },
+          import('../../app/movies/movies.module').then((m) => m.MoviesModule)
+      }
     ],
     { useHash: true }
-  ),
+  )
 ];
 
 const posterUrlMock = '';
@@ -26,7 +26,7 @@ const movieMock = {
     id: 531241,
     name: 'Spider-Man (Avengers) Collection',
     poster_path: '/nogV4th2P5QWYvQIMiWHj4CFLU9.jpg',
-    backdrop_path: '/zh72eVJTD5EssStCsNHqELuh6uD.jpg',
+    backdrop_path: '/zh72eVJTD5EssStCsNHqELuh6uD.jpg'
   },
   budget: 160000000,
   homepage: 'https://www.marvel.com/movies/spider-man-far-from-home',
@@ -43,25 +43,25 @@ const movieMock = {
     id: 420,
     logo_path: '/hUzeosd33nzE5MCNsZxCGEKTXaQ.png',
     name: 'Marvel Studios',
-    origin_country: 'US',
+    origin_country: 'US'
   },
   1: {
     id: 5,
     logo_path: '/71BqEFAF4V3qjjMPCpLuyJFB9A.png',
     name: 'Columbia Pictures',
-    origin_country: 'US',
+    origin_country: 'US'
   },
   2: {
     id: 84041,
     logo_path: '/XmHMPGzdI5c4WGX1YlxU4s2v7T.png',
     name: 'Pascal Pictures',
-    origin_country: 'US',
+    origin_country: 'US'
   },
   3: {
     id: 34,
     logo_path: '/GagSvqWlyPdkFHMfQ3pNq6ix9P.png',
     name: 'Sony Pictures',
-    origin_country: 'US',
+    origin_country: 'US'
   },
   4: { id: 86561, logo_path: null, name: 'Stereo D', origin_country: 'US' },
   length: 5,
@@ -74,7 +74,7 @@ const movieMock = {
   title: 'Spider-Man: Far from Home',
   video: false,
   vote_average: 7.5,
-  vote_count: 8024,
+  vote_count: 8024
 };
 
 storiesOf('MoviePageComponent', module)
@@ -82,7 +82,7 @@ storiesOf('MoviePageComponent', module)
     moduleMetadata({
       declarations: [MoviePageComponent],
       imports: [...RouterModuleMoviesImport],
-      providers: [{ provide: APP_BASE_HREF, useValue: '/' }],
+      providers: [{ provide: APP_BASE_HREF, useValue: '/' }]
     })
   )
   .add('default', () => ({
@@ -90,7 +90,7 @@ storiesOf('MoviePageComponent', module)
         <app-movie-page></app-movie-page>
     `,
     component: MoviePageComponent,
-    props: {},
+    props: {}
   }))
   .add('with content', () => ({
     template: `
@@ -108,6 +108,6 @@ storiesOf('MoviePageComponent', module)
       movie: movieMock,
       posterUrl: posterUrlMock,
       collectionPosterUrl: collectionPosterUrlMock,
-      voteAverage: voteAverageMock,
-    },
+      voteAverage: voteAverageMock
+    }
   }));

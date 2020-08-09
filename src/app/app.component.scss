@@ -26,13 +26,13 @@ body {
   background-color: rgb(236, 236, 236);
   /* height of footer */
 
-  section{
+  section {
     width: 80%;
     margin: 0 auto;
     padding-top: 20px;
     padding-bottom: 20px;
 
-    @include mQ(1500px){
+    @include mQ(1500px) {
       width: 100%;
     }
 

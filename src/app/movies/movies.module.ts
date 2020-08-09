@@ -21,7 +21,7 @@ const moviesComponents = [
   MoviePageComponent,
   MovieSimilarComponent,
   SearchResultsComponent,
-  PopMoviesComponent,
+  PopMoviesComponent
 ];
 
 @NgModule({
@@ -33,7 +33,7 @@ const moviesComponents = [
     MoviePageResolver,
     MovieSimilarResolver,
     MovieDetailsResolver,
-    PopMoviesResolver,
-  ],
+    PopMoviesResolver
+  ]
 })
 export class MoviesModule {}

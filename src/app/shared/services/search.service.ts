@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 import { Injectable } from '@angular/core';
 // import { HttpClient } from '@angular/common/http';
 
@@ -5,32 +6,36 @@ import { Injectable } from '@angular/core';
 export class SearchService {
   // constructor(private http: HttpClient) {}
 
-  searchMovieByTitle(title: string, page: number) {
+  async searchMovieByTitle(title: string, page: number) {
     console.log('Searching movie');
-    return fetch(
+    const response = await fetch(
       `https://api.themoviedb.org/3/search/movie?&api_key=8fa93c9b6c348f8a5cdc2ac737953f7d&query=${title}&page=${page}`
-    ).then((response) => response.json());
+    );
+    return await response.json();
   }
 
-  searchMovieById(movieId: number) {
+  async searchMovieById(movieId: number) {
     console.log('Searching movies by id');
-    return fetch(
+    const response = await fetch(
       `https://api.themoviedb.org/3/movie/${movieId}?api_key=8fa93c9b6c348f8a5cdc2ac737953f7d`
-    ).then((response) => response.json());
+    );
+    return await response.json();
   }
 
-  searchSimilarMovies(movieId: number) {
+  async searchSimilarMovies(movieId: number) {
     console.log('Searching similar movies');
-    return fetch(
+    const response = await fetch(
       `https://api.themoviedb.org/3/movie/${movieId}/similar?api_key=8fa93c9b6c348f8a5cdc2ac737953f7d&language=en-US&page=1`
-    ).then((response) => response.json());
+    );
+    return await response.json();
   }
 
-  public searchPopMovies(page: number) {
+  public async searchPopMovies(page: number) {
     console.log('Searching popular movies');
-    return fetch(
+    const response = await fetch(
       `https://api.themoviedb.org/3/discover/movie?api_key=8fa93c9b6c348f8a5cdc2ac737953f7d&sort_by=popularity.desc&page=${page}`
-    ).then((response) => response.json());
+    );
+    return await response.json();
 
     // this.http
     //   .get(

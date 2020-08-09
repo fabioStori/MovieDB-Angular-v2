@@ -1,5 +1,4 @@
-import { ComponentFixture, TestBed, async } from '@angular/core/testing';
-import { RouterTestingModule } from '@angular/router/testing';
+import { TestBed } from '@angular/core/testing';
 import { SearchService } from './search.service';
 
 describe('Search service', () => {
@@ -7,7 +6,7 @@ describe('Search service', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [SearchService],
+      providers: [SearchService]
     });
   });
   beforeEach(() => {
