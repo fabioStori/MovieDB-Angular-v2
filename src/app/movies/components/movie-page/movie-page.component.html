@@ -4,8 +4,8 @@
       <div class="col-md-4">
         <div class="card text-center movie-title">
           <div class="card-header">
-            <h1>{{ movie["title"] }}</h1>
-            <h4>{{ movie["release_date"] }}</h4>
+            <h1>{{ movie['title'] }}</h1>
+            <h4>{{ movie['release_date'] }}</h4>
           </div>
           <div class="card-body">
             <img src="{{ posterUrl }}" />
@@ -16,11 +16,11 @@
         <div class="card text-center movie-info">
           <div class="card-header">
             <h2>Overview</h2>
-            <h4>{{ movie["overview"] }}</h4>
+            <h4>{{ movie['overview'] }}</h4>
           </div>
           <div class="card-body">
             <h3>Vote Average:</h3>
-            <div class="card-text">{{ movie["vote_average"] }} / 10</div>
+            <div class="card-text">{{ movie['vote_average'] }} / 10</div>
           </div>
           <div class="progress" style="margin: 0px 10px 10px 10px;">
             <div
@@ -46,7 +46,7 @@
         >
           <div class="card-header">
             <h2>This movie belongs to the following collection:</h2>
-            <h4>{{ movie["belongs_to_collection"]["name"] }}</h4>
+            <h4>{{ movie['belongs_to_collection']['name'] }}</h4>
             <img
               class="img-fluid card-img-middle"
               [src]="collectionPosterUrl"
@@ -71,7 +71,7 @@
               "
             >
               <h4>
-                {{ companie["name"] }}
+                {{ companie['name'] }}
               </h4>
             </div>
           </div>

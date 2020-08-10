@@ -10,7 +10,7 @@ describe('PopMoviesComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [PopMoviesComponent],
-      imports: [RouterTestingModule],
+      imports: [RouterTestingModule]
     }).compileComponents();
 
     fixture = TestBed.createComponent(PopMoviesComponent);
