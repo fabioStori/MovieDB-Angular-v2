@@ -14,6 +14,8 @@ export class MovieSimilarComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.data.subscribe((data: Data) => {
+      console.log(data);
+
       if (data['similarMovies']['results'].length !== 0) {
         this.similarMovies = data['similarMovies']['results'];
         for (const i in this.similarMovies) {

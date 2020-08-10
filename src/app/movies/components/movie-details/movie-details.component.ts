@@ -15,8 +15,6 @@ export class MovieDetailsComponent implements OnInit {
   constructor(private route: ActivatedRoute, private router: Router) {}
 
   ngOnInit(): void {
-    //need to find a way to show the data only after the movieDetails is fetched and ready
-
     this.route.data.subscribe((data: Data) => {
       this.movieDetails = data['movie'];
       this.showRelatedMovies = false;

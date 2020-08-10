@@ -16,10 +16,8 @@ export class MovieInformationComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.search.searchMovieById(+this.movieId).then((results) => {
-      results.subscribe((data: Data) => {
-        this.movieInformation = data;
-      });
+    this.search.searchMovieById(+this.movieId).subscribe((data: Data) => {
+      this.movieInformation = data;
     });
   }
   onMoreInformationClick(): void {

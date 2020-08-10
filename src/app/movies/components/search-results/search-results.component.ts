@@ -30,7 +30,7 @@ export class SearchResultsComponent implements OnInit {
       this.searchedTitle = this.route.snapshot.params['searchTitle'];
       this.search
         .searchMovieByTitle(this.searchedTitle, data['page'])
-        .then((data: Data) => {
+        .subscribe((data: Data) => {
           this.movies = data['results'];
         });
     });
