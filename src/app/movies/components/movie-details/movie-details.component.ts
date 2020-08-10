@@ -16,6 +16,7 @@ export class MovieDetailsComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.data.subscribe((data: Data) => {
+      console.log(data);
       this.movieDetails = data['movie'];
       this.showRelatedMovies = false;
       this.showMovieInformation = false;
