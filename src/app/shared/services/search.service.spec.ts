@@ -38,7 +38,7 @@ describe('Search service', () => {
         movies: {},
         routeName: 'Searched movies'
       };
-      service.searchMovieByTitle('avengers', 1).subscribe((data) => {
+      service.searchMovieByTitle('avengers', '1').subscribe((data) => {
         expect(testModel).toBe(data);
       });
       const req = httpTestCtrl.expectOne(SEARCH_BY_TITLE_URL);
@@ -83,7 +83,7 @@ describe('Search service', () => {
         },
         routeName: 'Popular movies'
       };
-      service.searchPopMovies(1).subscribe((data) => {
+      service.searchPopMovies('1').subscribe((data) => {
         expect(testModel).toBe(data);
       });
       const req = httpTestCtrl.expectOne(SEARCH_POP_URL);
@@ -96,7 +96,7 @@ describe('Search service', () => {
   describe('error get methods', () => {
     test('should test error of searchMovieByTitle.get', () => {
       const errorMsg = 'mock 404 error occured';
-      service.searchMovieByTitle('avengers', 1).subscribe(
+      service.searchMovieByTitle('avengers', '1').subscribe(
         () => {
           fail('failing with error 404');
         },
@@ -147,7 +147,7 @@ describe('Search service', () => {
     });
     test('should test error of searchPopMovies.get', () => {
       const errorMsg = 'mock 404 error occured';
-      service.searchPopMovies(1).subscribe(
+      service.searchPopMovies('1').subscribe(
         () => {
           fail('failing with error 404');
         },
