@@ -5,5 +5,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './home-page.component.html'
 })
 export class HomePageComponent implements OnInit {
+  previews = [{}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}];
+
   ngOnInit(): void {}
 }
