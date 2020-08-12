@@ -1,11 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 
-// import {SearchService} from './services/search.service'
+import { TrustfullPipe } from './pipes/trustfull.pipe';
 
 @NgModule({
-  declarations: [],
+  declarations: [TrustfullPipe],
   imports: [CommonModule],
-  exports: [CommonModule]
+  exports: [CommonModule, TrustfullPipe]
 })
 export class SharedModule {}

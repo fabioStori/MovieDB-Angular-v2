@@ -7,6 +7,6 @@ import { HomeRoutingModule } from './home-routing.module';
 @NgModule({
   declarations: [HomePageComponent, MoviePreviewComponent],
   imports: [CommonModule, HomeRoutingModule],
-  exports: [HomePageComponent]
+  exports: [HomePageComponent, MoviePreviewComponent]
 })
 export class HomeModule {}
