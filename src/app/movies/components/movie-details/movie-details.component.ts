@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Data, Router } from '@angular/router';
+import { ActivatedRoute, Data } from '@angular/router';
 
 @Component({
   selector: 'app-movie-details',
@@ -12,7 +12,7 @@ export class MovieDetailsComponent implements OnInit {
   showMovieInformation = false;
   relatedMovies = {};
 
-  constructor(private route: ActivatedRoute, private router: Router) {}
+  constructor(private route: ActivatedRoute) {}
 
   ngOnInit(): void {
     this.route.data.subscribe((data: Data) => {
@@ -22,13 +22,5 @@ export class MovieDetailsComponent implements OnInit {
       this.showMovieInformation = false;
       this.posterUrl = `https://image.tmdb.org/t/p/w500/${data['movie']['poster_path']}`;
     });
-  }
-
-  movieFeature(feature: string): void {
-    if (feature === 'similar-movies') {
-      this.router.navigate(['similar'], { relativeTo: this.route });
-    } else if (feature === 'movie-information') {
-      this.router.navigate(['info'], { relativeTo: this.route });
-    }
   }
 }

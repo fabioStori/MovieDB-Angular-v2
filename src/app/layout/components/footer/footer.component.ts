@@ -1,13 +1,9 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-footer',
-  templateUrl: './footer.component.html',
+  templateUrl: './footer.component.html'
 })
-export class FooterComponent implements OnInit {
+export class FooterComponent {
   @Input() storyTestText = '';
-
-  constructor() {}
-
-  ngOnInit(): void {}
 }

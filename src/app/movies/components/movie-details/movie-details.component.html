@@ -11,18 +11,14 @@
             />
           </div>
           <div class="col-sm-8">
-            <p class="card-title">{{ movieDetails["title"] }}</p>
-            <p class="card-text">{{ movieDetails["overview"] }}</p>
-            <div class="col-xs-12  btns" style="text-align: center;">
-              <a
-                (click)="movieFeature('similar-movies')"
-                class="btn btn-success"
+            <p class="card-title">{{ movieDetails['title'] }}</p>
+            <p class="card-text">{{ movieDetails['overview'] }}</p>
+            <div class="col-xs-12 btns" style="text-align: center;">
+              <a routerLink="similar" class="btn btn-success"
                 >See Related Movies</a
               >
-              <br>
-              <a
-                (click)="movieFeature('movie-information')"
-                class="btn btn-primary"
+              <br />
+              <a routerLink="info" class="btn btn-primary"
                 >See More Information</a
               >
             </div>

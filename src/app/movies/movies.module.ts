@@ -1,5 +1,5 @@
-import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 import { MovieDetailsComponent } from './components/movie-details/movie-details.component';
 import { MovieInformationComponent } from './components/movie-information/movie-information.component';
@@ -24,16 +24,18 @@ const moviesComponents = [
   PopMoviesComponent
 ];
 
+const providers = [
+  SearchResultsResolver,
+  MoviePageResolver,
+  MovieSimilarResolver,
+  MovieDetailsResolver,
+  PopMoviesResolver
+];
+
 @NgModule({
   declarations: [...moviesComponents],
-  imports: [CommonModule, MoviesRoutingModule],
-  exports: [...moviesComponents, CommonModule],
-  providers: [
-    SearchResultsResolver,
-    MoviePageResolver,
-    MovieSimilarResolver,
-    MovieDetailsResolver,
-    PopMoviesResolver
-  ]
+  imports: [MoviesRoutingModule, CommonModule],
+  exports: [...moviesComponents],
+  providers: [...providers]
 })
 export class MoviesModule {}

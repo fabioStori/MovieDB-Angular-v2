@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Data, Router } from '@angular/router';
+import { ActivatedRoute, Data } from '@angular/router';
 import { SearchService } from '../../../shared/services/search.service';
 
 @Component({
@@ -14,11 +14,7 @@ export class SearchResultsComponent implements OnInit {
   pageNumber = 1;
   totalPagesArray = [];
 
-  constructor(
-    private route: ActivatedRoute,
-    private router: Router,
-    private search: SearchService
-  ) {}
+  constructor(private route: ActivatedRoute, private search: SearchService) {}
 
   ngOnInit(): void {
     //subscribing to searched title

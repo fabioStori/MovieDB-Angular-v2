@@ -2,15 +2,6 @@
   <div class="col-md-12">
     <div class="wrapper">
       <ul class="pagination">
-        <!-- <li>
-          <a
-            (click)="pageNumber = pageNumber - 1"
-            routerLink="/pop-movies"
-            [queryParams]="{ page: pageNumber }"
-            routerLinkActive="active"
-            >«</a
-          >
-        </li> -->
         <li *ngFor="let page of totalPagesArray">
           <a
             routerLink="/pop-movies"
@@ -20,15 +11,6 @@
             >{{ page }}</a
           >
         </li>
-        <!-- <li>
-          <a
-            (click)="pageNumber = pageNumber + 1"
-            routerLink="/pop-movies"
-            [queryParams]="{ page: pageNumber }"
-            routerLinkActive="active"
-            >»</a
-          >
-        </li> -->
       </ul>
     </div>
     <div class="searched-box">

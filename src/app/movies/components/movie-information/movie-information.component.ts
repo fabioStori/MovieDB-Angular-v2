@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router, Data } from '@angular/router';
+import { ActivatedRoute, Data } from '@angular/router';
 import { SearchService } from '../../../shared/services/search.service';
 
 @Component({
@@ -9,18 +9,11 @@ import { SearchService } from '../../../shared/services/search.service';
 export class MovieInformationComponent implements OnInit {
   movieInformation = {};
   movieId = this.route.parent.params['value']['id'];
-  constructor(
-    private route: ActivatedRoute,
-    private router: Router,
-    private search: SearchService
-  ) {}
+  constructor(private route: ActivatedRoute, private search: SearchService) {}
 
   ngOnInit(): void {
     this.search.searchMovieById(+this.movieId).subscribe((data: Data) => {
       this.movieInformation = data;
     });
-  }
-  onMoreInformationClick(): void {
-    this.router.navigate(['/movie-page', this.movieId]);
   }
 }

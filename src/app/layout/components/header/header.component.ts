@@ -1,19 +1,17 @@
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { Component, ViewChild, ElementRef } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
-  templateUrl: './header.component.html',
+  templateUrl: './header.component.html'
 })
-export class HeaderComponent implements OnInit {
-  headerFeature: string = '';
+export class HeaderComponent {
+  headerFeature = '';
   @ViewChild('searchedTitle', { static: true }) searchedTitle: ElementRef;
 
   constructor(private router: Router) {}
 
-  ngOnInit(): void {}
-
-  headerFeatureClicked(feature: string) {
+  headerFeatureClicked(feature: string): void {
     switch (feature) {
       case 'home': {
         this.router.navigate(['']);
@@ -26,7 +24,7 @@ export class HeaderComponent implements OnInit {
       case 'search': {
         this.router.navigate([
           'search',
-          this.searchedTitle.nativeElement.value,
+          this.searchedTitle.nativeElement.value
         ]);
         break;
       }
