@@ -1,8 +1,16 @@
-<img src="https://via.placeholder.com/220x150" />
-<div class="wrapper">
+<!-- <img src="https://via.placeholder.com/220x150" /> -->
+<div class="card" style="width: 18rem;">
+  <img class="card-img-top" src="..." alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">{{movie['title']}}</h5>
+    <p class="card-text">{{movie['overview']}}</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>
+<div class="wrapper" *ngIf="showmovieTrailer">
   <iframe
     class="embed"
-    [src]="video | trustfull"
+    [src]="movie[''] | trustfull"
     frameborder="1"
     modestbranding="1"
     rel="0"

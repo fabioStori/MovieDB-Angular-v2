@@ -1,43 +1,24 @@
-import {
-  ChangeDetectionStrategy,
-  Component,
-  HostBinding,
-  Input,
-  OnChanges,
-  OnInit
-} from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { SearchService } from 'src/app/shared/services/search.service';
+import { Data } from '@angular/router';
 
-interface YoutubeVideoState {
-  thumbnailUrl: string;
-  videoUrl: string;
-}
-
-const initialState: YoutubeVideoState = {
-  videoUrl: null,
-  thumbnailUrl: null
-};
 @Component({
   selector: 'app-movie-preview',
   templateUrl: './movie-preview.component.html'
 })
-export class MoviePreviewComponent implements OnChanges, OnInit {
-  @HostBinding('class')
-  @Input()
-  id: string;
+export class MoviePreviewComponent implements OnInit {
+  @Input() movie = {};
+  movieVideos = {};
+  showmovieTrailer = false;
 
-  state: YoutubeVideoState;
+  constructor(private searchService: SearchService) {}
 
-  video = 'https://www.youtube.com/embed/CD-E-LDc384';
-
-  constructor() {
-    this.state = initialState;
-  }
-  ngOnInit(): void {}
-
-  ngOnChanges(): void {
-    // this.state = {
-    //   thumbnailUrl: `https://img.youtube.com/vi/${this.id}/maxresdefault.jpg`,
-    //   videoUrl: `https://www.youtube.com/embed/${this.id}`
-    // };
+  ngOnInit(): void {
+    this.searchService
+      .searchVideos(this.movie['id'])
+      .subscribe((data: Data) => {
+        this.movieVideos = data['results'][0];
+        console.log(this.movieVideos);
+      });
   }
 }

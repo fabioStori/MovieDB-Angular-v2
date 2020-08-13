@@ -1,5 +1,5 @@
 <div class="preview-container">
-  <div class="previews" *ngFor="let preview of previews">
-    <app-movie-preview></app-movie-preview>
+  <div class="previews" *ngFor="let movie of movies | slice: 0:15 ">
+    <app-movie-preview [movie]="movie"></app-movie-preview>
   </div>
 </div>

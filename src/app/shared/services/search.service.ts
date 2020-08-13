@@ -51,4 +51,12 @@ export class SearchService {
     );
     return response;
   }
+
+  searchVideos(movieId: number) {
+    console.log('Searching pop movies');
+    const response = this.http.get(
+      `https://api.themoviedb.org/3/movie/${movieId}/videos?api_key=8fa93c9b6c348f8a5cdc2ac737953f7d`
+    );
+    return response;
+  }
 }
