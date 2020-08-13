@@ -1,10 +1,18 @@
 @import '../../../../assets/scss/_mixins';
 @import '../../../../assets/scss/_variables';
 
+h1{
+  text-align: center;
+}
 .preview-container {
   width: 80%;
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(min(220px, 100%), 1fr));
   grid-gap: 5px 0px;
+  background-color: rgb(184, 184, 184);
+  padding: 20px 20px;
+  border-radius: 20px;
+  text-align: center;
+  margin: 0 auto;
 }

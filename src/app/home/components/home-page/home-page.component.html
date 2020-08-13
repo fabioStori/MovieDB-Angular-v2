@@ -1,8 +1,8 @@
 
 
-<h1 style="text-align: center;">Now Playing:</h1>
+<h1>Now Playing:</h1>
 <div class="preview-container">
-  <div class="previews" *ngFor="let movie of movies | slice: 0:15 ">
+  <div class="previews" *ngFor="let movie of movies | slice: 0:15">
     <app-movie-preview [movie]="movie"></app-movie-preview>
   </div>
 </div>
