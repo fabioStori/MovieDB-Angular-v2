@@ -9,7 +9,8 @@ import { Data } from '@angular/router';
 export class MoviePreviewComponent implements OnInit {
   @Input() movie = {};
   movieVideos = {};
-  showmovieTrailer = false;
+  movieVideoUrl = '';
+  showMovieTrailer = false;
 
   constructor(private searchService: SearchService) {}
 
@@ -18,7 +19,11 @@ export class MoviePreviewComponent implements OnInit {
       .searchVideos(this.movie['id'])
       .subscribe((data: Data) => {
         this.movieVideos = data['results'][0];
-        console.log(this.movieVideos);
+        this.movieVideoUrl =
+          'https://www.youtube.com/embed/' + this.movieVideos['key'];
+        if (!!this.movieVideoUrl) {
+          this.showMovieTrailer = true;
+        }
       });
   }
 }

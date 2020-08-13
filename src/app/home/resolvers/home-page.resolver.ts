@@ -19,6 +19,6 @@ export class HomePageResolver implements Resolve<{}> {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
   ): {} | Observable<{}> | Promise<{}> {
-    return this.search.searchPopMovies('1');
+    return this.search.searchNowPlayingMovies('1');
   }
 }
