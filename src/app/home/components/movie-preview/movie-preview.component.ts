@@ -19,11 +19,10 @@ export class MoviePreviewComponent implements OnInit {
     this.searchService
       .searchVideos(this.movie['id'])
       .subscribe((data: Data) => {
-        this.movieVideos = data['results'][0];
-
-        if (!!this.movieVideos['key']) {
+        this.movieVideos = data['results'];
+        if (this.movieVideos['length'] != 0) {
           this.movieVideoUrl =
-            'https://www.youtube.com/embed/' + this.movieVideos['key'];
+            'https://www.youtube.com/embed/' + this.movieVideos[0]['key'];
         }
         if (this.movie['backdrop_path'] !== null) {
           this.imagePath = `https://image.tmdb.org/t/p/w500${this.movie['backdrop_path']}`;
@@ -33,6 +32,10 @@ export class MoviePreviewComponent implements OnInit {
       });
   }
 
-  onTrailerClick() {}
-  onPosterClick() {}
+  onTrailerClick(): void {
+    this.showMovieTrailer = true;
+  }
+  onPosterClick(): void {
+    this.showMovieTrailer = false;
+  }
 }
