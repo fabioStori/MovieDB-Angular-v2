@@ -25,7 +25,7 @@ export class MoviePreviewComponent implements OnInit {
           this.movieVideoUrl =
             'https://www.youtube.com/embed/' + this.movieVideos[0]['key'];
           this.hasVideos = true;
-        }else{
+        } else {
           this.hasVideos = false;
         }
         if (this.movie['backdrop_path'] !== null) {
