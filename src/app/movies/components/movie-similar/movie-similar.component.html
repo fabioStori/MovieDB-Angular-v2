@@ -3,21 +3,13 @@
   <div class="row">
     <div class="col-md-12">
       <h2>Similar Movies</h2>
-      <div
-        class="card"
-        *ngFor="let movie of similarMovies | slice: 0:2; let i = index"
-      >
-        <div class="div-img" style="text-align: center;">
-          <img class="img-fluid" [src]="posterUrl[i]" alt="Card image cap" />
-        </div>
+      <div class="card" *ngFor="let movie of similarMovies | slice: 0:2; let i = index">
+        <img class="img-fluid" [src]="posterUrl[i]" alt="Card image cap" />
         <div class="card-body">
           <h2 class="card-title">{{ movie['title']}}</h2>
           <p class="card-text">{{ movie['overview'] }}</p>
         </div>
-        <button
-          class="btn btn-primary goto-page"
-          [routerLink]="['/movie-page', movie['id']]"
-        >
+        <button class="btn goto-page" [routerLink]="['/movie-page', movie['id']]">
           Go to Movie Page
         </button>
       </div>

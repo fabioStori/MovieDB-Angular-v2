@@ -4,23 +4,15 @@
       <div class="card">
         <div class="row">
           <div class="col-sm-4">
-            <img
-              class="img-fluid card-img-middle"
-              [src]="posterUrl"
-              alt="Card image cap"
-            />
+            <img class="img-fluid card-img-middle" [src]="posterUrl" alt="Card image cap" />
           </div>
           <div class="col-sm-8">
             <p class="card-title">{{ movieDetails['title'] }}</p>
             <p class="card-text">{{ movieDetails['overview'] }}</p>
-            <div class="col-xs-12 btns" style="text-align: center;">
-              <a routerLink="similar" class="btn btn-success"
-                >See Related Movies</a
-              >
+            <div class="btns" style="text-align: center;">
+              <a routerLink="similar" class="btn btn-dark">See Related Movies</a>
               <br />
-              <a routerLink="info" class="btn btn-primary"
-                >See More Information</a
-              >
+              <a routerLink="info" class="btn btn-dark">See More Information</a>
             </div>
           </div>
         </div>

@@ -10,18 +10,25 @@
   & .card-body {
     margin: 0 auto;
 
-    & > ul {
+    &>ul {
       text-align: left;
       font-size: medium;
       padding-left: 15px;
     }
-    & > .btn {
+
+    &>.btn {
       text-align: center;
       margin: 0 auto;
       color: white;
-      border-radius: 5px;
+      border-radius: 10px;
+      background-color: $textBlue;
+
+      &:hover {
+        background-color: lighten($textBlue, 20%);
+      }
     }
   }
+
   & h2 {
     text-align: center;
     padding-top: 6px;

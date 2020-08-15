@@ -1,15 +1,10 @@
 <div class="row">
   <div class="col-md-12">
-    <div class="wrapper">
+    <div class="wrapper pagination-wrapper">
       <ul class="pagination">
         <li *ngFor="let page of totalPagesArray">
-          <a
-            routerLink="/pop-movies"
-            [queryParams]="{ page: page }"
-            routerLinkActive="active"
-            (click)="pageNumber = page"
-            >{{ page }}</a
-          >
+          <a routerLink="/pop-movies" [queryParams]="{ page: page }" routerLinkActive="active"
+            (click)="pageNumber = page">{{ page }}</a>
         </li>
       </ul>
     </div>
@@ -17,12 +12,8 @@
       <h3 class="page-title">
         Showing Popular Movies
       </h3>
-      <button
-        class="btn btn-light searched-movies"
-        *ngFor="let movie of movies; let i = index"
-        routerLink="{{ movie['id'] }}"
-        routerLinkActive="active"
-      >
+      <button class="btn btn-light searched-movies" *ngFor="let movie of movies; let i = index"
+        routerLink="{{ movie['id'] }}" routerLinkActive="active">
         {{ movie.title }}
       </button>
     </div>

@@ -16,6 +16,7 @@
       margin: 0 auto;
       @include hoverTitle;
     }
+
     .page-title {
       font-weight: bold;
       text-align: center;
@@ -25,13 +26,16 @@
       @include hoverTitle;
     }
   }
+
   .wrapper {
     text-align: center;
+
     ul {
       display: inline-block;
       margin: 0;
     }
-    a{
+
+    a {
       cursor: pointer;
     }
   }

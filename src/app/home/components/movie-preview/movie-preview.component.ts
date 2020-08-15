@@ -12,6 +12,7 @@ export class MoviePreviewComponent implements OnInit {
   movieVideoUrl = '';
   imagePath = '';
   showMovieTrailer = false;
+  hasVideos = true;
 
   constructor(private searchService: SearchService) {}
 
@@ -23,6 +24,9 @@ export class MoviePreviewComponent implements OnInit {
         if (this.movieVideos['length'] != 0) {
           this.movieVideoUrl =
             'https://www.youtube.com/embed/' + this.movieVideos[0]['key'];
+          this.hasVideos = true;
+        }else{
+          this.hasVideos = false;
         }
         if (this.movie['backdrop_path'] !== null) {
           this.imagePath = `https://image.tmdb.org/t/p/w500${this.movie['backdrop_path']}`;

@@ -6,20 +6,28 @@
 .col-md-12 {
   padding: 0px 5px;
 
-  h2 {
+  & > h2 {
     text-align: center;
     padding-top: 6px;
   }
 
-  img {
+  & > .card > img {
     border-radius: 5px;
-    margin-top: 5px;
+    padding-top: 5px;
     width: 35%;
+    margin: 0 auto;
   }
 
-  .goto-page {
-    width: 50%;
+  & > .card > .goto-page {
+    width: 85%;
+    border-radius: 10px;
     margin: 0 auto;
     margin-bottom: 5px;
+    background-color: $textBlue;
+    color: white;
+
+    &:hover {
+      background-color: lighten($textBlue, 20%);
+    }
   }
 }

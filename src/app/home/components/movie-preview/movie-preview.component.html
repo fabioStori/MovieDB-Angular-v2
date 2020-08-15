@@ -1,21 +1,20 @@
-<div class="card" style="width: 250px; height: 300px;">
-  <img class="card-img-top" *ngIf="!showMovieTrailer" src="{{imagePath}}" alt="Card image cap" style="height: 150px; width: 240px; margin: 0 auto; margin-top: 3px;">
-  <div class="wrapper" *ngIf="showMovieTrailer" style="margin: 0 auto; margin-top: 3px;">
-    <iframe
-      class="embed"
-      [src]="movieVideoUrl | trustfull"
-      allowfullscreen
-      width="240"
-      height="150"
-      botder="0px"
-    >
-    </iframe>
-  </div>
-  <div class="card-body">
-    <h5 class="card-title">{{movie['title']}}</h5>
-    <p class="card-text">{{movie['overview'] | slice: 0 : 130}}...</p>
-    <a *ngIf="!showMovieTrailer" class="btn btn-primary" (click)="onTrailerClick()">See trailer</a>
-    <a *ngIf="showMovieTrailer" class="btn btn-primary" (click)="onPosterClick()">See poster</a>
+<div class="poster-trailer-card">
+  <div class="card">
+    <img class="card-img-top" *ngIf="!showMovieTrailer" src="{{imagePath}}" alt="Card image cap">
+    <div class="trailer-wrapper" *ngIf="showMovieTrailer && hasVideos">
+      <iframe class="embed" [src]="movieVideoUrl | trustfull" allowfullscreen width="240" height="150" border-radius = "20px;">
+      </iframe>
+    </div>
+    <div class="trailer-wrapper" *ngIf="showMovieTrailer && !hasVideos">
+      <p class="alert alert-danger">
+        No trailers, teasers or videos were found for this movie...
+      </p>
+    </div>
+    <div class="card-body">
+      <h4 class="card-title">{{movie['title']}}</h4>
+      <p class="card-text">{{movie['overview'] | slice: 0 : 130}}...</p>
+      <a *ngIf="!showMovieTrailer" class="btn btn-dark" (click)="onTrailerClick()">See trailer</a>
+      <a *ngIf="showMovieTrailer" class="btn btn-dark" (click)="onPosterClick()">See poster</a>
+    </div>
   </div>
 </div>
-

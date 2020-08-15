@@ -1,0 +1,39 @@
+.poster-trailer-card {
+  &>.card {
+    width: 250px;
+    height: 300px;
+    border-radius: 20px;
+
+    &>.card-img-top {
+      border-radius: 20px;
+      height: 150px;
+      width: 240px;
+      margin: 0 auto;
+      margin-top: 3px;
+    }
+
+    &>.trailer-wrapper {
+      border-radius: 20px;
+      height: 150px;
+      width: 240px;
+      margin: 0 auto;
+      margin-top: 3px;
+      &>.alert-danger{
+        margin-top: 20px;
+      }
+    }
+
+    &>.card-body {
+      &>.btn {
+        background-color: $textBlue;
+        font-size: medium;
+        color: white;
+        border-radius: 10px;
+
+        &:hover {
+          background-color: lighten($textBlue, 20%);
+        }
+      }
+    }
+  }
+}

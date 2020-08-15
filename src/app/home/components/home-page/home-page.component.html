@@ -1,8 +1,10 @@
 
-
-<h1>Now Playing:</h1>
-<div class="preview-container">
-  <div class="previews" *ngFor="let movie of movies | slice: 0:15">
-    <app-movie-preview [movie]="movie"></app-movie-preview>
+<h1 id="on-cinema"><span>On the cinema:</span></h1>
+<hr>
+<div class="preview-background">
+  <div class="preview-container">
+    <div class="previews" *ngFor="let movie of movies | slice: 0:15">
+      <app-movie-preview [movie]="movie"></app-movie-preview>
+    </div>
   </div>
 </div>
