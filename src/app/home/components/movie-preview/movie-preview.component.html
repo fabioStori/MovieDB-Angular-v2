@@ -15,6 +15,7 @@
       <p class="card-text">{{movie['overview'] | slice: 0 : 130}}...</p>
       <a *ngIf="!showMovieTrailer" class="btn btn-dark" (click)="onTrailerClick()">See trailer</a>
       <a *ngIf="showMovieTrailer" class="btn btn-dark" (click)="onPosterClick()">See poster</a>
+      <a class="btn btn-dark" [routerLink]="['/', 'movie-page', movie['id']]">Go to movie page</a>
     </div>
   </div>
 </div>

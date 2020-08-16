@@ -26,10 +26,11 @@
     &>.card-body {
       &>.btn {
         background-color: $textBlue;
-        font-size: medium;
+        font-size: small;
         color: white;
         border-radius: 10px;
-
+        margin-right: 2px;
+        margin-left: 2px;
         &:hover {
           background-color: lighten($textBlue, 20%);
         }
