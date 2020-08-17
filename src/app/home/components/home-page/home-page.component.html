@@ -2,17 +2,38 @@
 <hr />
 
 <div class="preview-background">
-  <div
-    class="arrow backarrow"
-    [inlineSVG]="'../../../../assets/img/icons/angle-line.svg'"
-  ></div>
-  <div class="preview-container">
-    <div class="previews" *ngFor="let movie of movies | slice: 0:15">
-      <app-movie-preview [movie]="movie"></app-movie-preview>
+  <div class="row">
+    <div class="col-md-1">
+      <div
+        class="arrow backarrow"
+        [inlineSVG]="'../../../../assets/img/icons/angle-line.svg'"
+        (click)="back()"
+      ></div>
+    </div>
+
+    <div class="col-md-10">
+      <div class="preview-container">
+        <div class="previews" *ngFor="let movie of movies | slice: 0:16 ; let i = index">
+          <div
+            class="preview-wrapper"
+            [ngClass]="{
+              '-next': isNextSlide(i),
+              '-current': isCurrentSlide(i),
+              '-back': isBackSlide(i)
+            }"
+          >
+            <app-movie-preview [movie]="movie"></app-movie-preview>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-1">
+      <div
+        class="arrow nextarrow"
+        [inlineSVG]="'../../../../assets/img/icons/angle-line.svg'"
+        (click)="next()"
+      ></div>
     </div>
   </div>
-  <div
-    class="arrow nextarrow"
-    [inlineSVG]="'../../../../assets/img/icons/angle-line.svg'"
-  ></div>
 </div>

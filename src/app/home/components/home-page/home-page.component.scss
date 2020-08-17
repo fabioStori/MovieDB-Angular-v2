@@ -21,43 +21,51 @@
   padding-top: 20px;
   padding-bottom: 20px;
 
-  & > .preview-container {
+  & > .row > .col-md-10 > .preview-container {
     width: 85%;
     margin: 0 auto;
-    padding: baseline(6) 0;
     display: grid;
-    grid-template-columns: repeat(5, minmax(min(220px, 100%), 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(min(220px, 100%), 1fr));
     grid-gap: 5px 30px;
     text-align: center;
   }
 
-  $iconSize: 40px;
+  & > .row > .col-md-10  > .preview-container > .previews > .preview-wrapper.-back,
+  & > .row > .col-md-10  > .preview-container > .previews > .preview-wrapper.-next{
+    opacity: 0;
+  }
+  & > .row > .col-md-10  > .preview-container > .previews > .preview-wrapper.-current{
+    opacity: 1;
+  }
 
-  & > .arrow {
+  $iconSize: 60px;
+
+  & > .row > .col-md-1 > .arrow {
     height: $iconSize;
     width: $iconSize;
     color: $white;
     cursor: pointer;
-    position: absolute;
 
     &.-disabled {
       opacity: 0.5;
     }
   }
 
-  & > .arrow > svg {
+  & > .row > .col-md-1 > .arrow > svg {
     stroke: $white;
   }
 
-  & > .backarrow {
+  & > .row > .col-md-1 > .backarrow {
+    position: relative;
+    top: calc(50% - 30px);
+    margin: 0 auto;
     transform: rotate(270deg);
-    top: 50%;
-    left: 60px;
   }
 
-  & > .nextarrow {
+  & > .row > .col-md-1 > .nextarrow {
+    position: relative;
+    top: calc(50% - 30px);
+    margin: 0 auto;
     transform: rotate(90deg);
-    top: 50%;
-    right: 60px;
   }
 }
