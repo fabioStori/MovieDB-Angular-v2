@@ -1,10 +1,18 @@
-
 <h1 id="on-cinema"><span>On the cinema:</span></h1>
-<hr>
+<hr />
+
 <div class="preview-background">
+  <div
+    class="arrow backarrow"
+    [inlineSVG]="'../../../../assets/img/icons/angle-line.svg'"
+  ></div>
   <div class="preview-container">
     <div class="previews" *ngFor="let movie of movies | slice: 0:15">
       <app-movie-preview [movie]="movie"></app-movie-preview>
     </div>
   </div>
+  <div
+    class="arrow nextarrow"
+    [inlineSVG]="'../../../../assets/img/icons/angle-line.svg'"
+  ></div>
 </div>

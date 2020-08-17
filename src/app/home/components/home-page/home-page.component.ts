@@ -13,8 +13,7 @@ export class HomePageComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.data.subscribe((data: Data) => {
-      this.movies = data['movie']['results'];
-      console.log(this.movies);
+      this.movies = data.movie.results;
     });
   }
 }

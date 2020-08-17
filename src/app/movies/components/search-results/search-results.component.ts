@@ -20,6 +20,7 @@ export class SearchResultsComponent implements OnInit {
     console.log(this.route.snapshot);
     //subscribing to searched title
     this.route.data.subscribe((data: Data) => {
+      console.log(data);
       this.refreshSearchResults(data);
     });
     //subscribing to page number param

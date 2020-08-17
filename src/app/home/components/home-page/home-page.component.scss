@@ -1,5 +1,6 @@
 @import '../../../../assets/scss/_mixins';
 @import '../../../../assets/scss/_variables';
+@import '../../../../assets/scss/settings.scss/color-palette.scss';
 
 #on-cinema {
   text-align: center;
@@ -18,14 +19,45 @@
   background-color: lightgrey;
   border-radius: 20px;
   padding-top: 20px;
+  padding-bottom: 20px;
 
-  &>.preview-container {
+  & > .preview-container {
     width: 85%;
     margin: 0 auto;
+    padding: baseline(6) 0;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(min(220px, 100%), 1fr));
+    grid-template-columns: repeat(5, minmax(min(220px, 100%), 1fr));
     grid-gap: 5px 30px;
     text-align: center;
-    margin: 0 auto;
+  }
+
+  $iconSize: 40px;
+
+  & > .arrow {
+    height: $iconSize;
+    width: $iconSize;
+    color: $white;
+    cursor: pointer;
+    position: absolute;
+
+    &.-disabled {
+      opacity: 0.5;
+    }
+  }
+
+  & > .arrow > svg {
+    stroke: $white;
+  }
+
+  & > .backarrow {
+    transform: rotate(270deg);
+    top: 50%;
+    left: 60px;
+  }
+
+  & > .nextarrow {
+    transform: rotate(90deg);
+    top: 50%;
+    right: 60px;
   }
 }
