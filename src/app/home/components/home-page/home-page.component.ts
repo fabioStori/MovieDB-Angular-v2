@@ -9,6 +9,7 @@ import { ActivatedRoute, Data } from '@angular/router';
 export class HomePageComponent implements OnInit {
   movies = [];
   currentSlide = 0;
+  slides = [];
 
   constructor(private route: ActivatedRoute) {}
 

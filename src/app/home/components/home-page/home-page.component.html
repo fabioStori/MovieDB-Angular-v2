@@ -13,7 +13,10 @@
 
     <div class="col-md-10">
       <div class="preview-container">
-        <div class="previews" *ngFor="let movie of movies | slice: 0:16 ; let i = index">
+        <div
+          class="previews"
+          *ngFor="let movie of movies | slice: 0:16; let i = index"
+        >
           <div
             class="preview-wrapper"
             [ngClass]="{
