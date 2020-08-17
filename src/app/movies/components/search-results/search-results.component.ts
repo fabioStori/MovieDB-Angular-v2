@@ -17,6 +17,7 @@ export class SearchResultsComponent implements OnInit {
   constructor(private route: ActivatedRoute, private search: SearchService) {}
 
   ngOnInit(): void {
+    console.log(this.route.snapshot);
     //subscribing to searched title
     this.route.data.subscribe((data: Data) => {
       this.refreshSearchResults(data);
