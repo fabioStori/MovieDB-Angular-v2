@@ -22,13 +22,6 @@ export class HomePageComponent implements OnInit {
     });
   }
 
-  isNextSlide(slideIndex: number): boolean {
-    // const columnSize = 3;
-    // const slideColumns = 2;
-    // return (this.currentSlide + slideColumns) * columnSize <= slideIndex;
-    return true;
-  }
-
   isCurrentSlide(slideIndex: number): boolean {
     switch (this.currentSlide) {
       case 0: {
@@ -52,22 +45,11 @@ export class HomePageComponent implements OnInit {
         else return false;
       }
     }
-    // const columnSize = 3;
-    // const slideColumns = 2;
-    // return (
-    //   slideIndex >= this.currentSlide * columnSize &&
-    //   slideIndex < (this.currentSlide + slideColumns) * columnSize
-    // );
-  }
-
-  isBackSlide(slideIndex: number): boolean {
-    // const columnSize = 3;
-    // return this.currentSlide * columnSize > slideIndex;
-    return true;
   }
 
   getMovieSlides(index: number) {
     if (index === 0) {
+      console.log(index);
       return this.movies.slice(0, 4);
     } else if (index === 1) {
       return this.movies.slice(4, 8);

@@ -27,28 +27,22 @@
     text-align: center;
     display: grid;
     // grid-template-columns: repeat(auto-fill, minmax(min(220px, 100%), 1fr));
-    // grid-gap: 5px 30px;
-    grid-template-columns: repeat(20, 1fr);
+    grid-gap: 5px 30px;
+    grid-template-columns: repeat(10, 1fr);
     // grid-gap: baseline(1);
   }
 
-  &
-    > .row
-    > .col-md-10
-    > .preview-container
-    > .slides{
-
+  & > .row > .col-md-10 > .preview-container > .slides > .previews {
+    position: absolute;
+    top: 0;
+    left: 0;
     transition-property: all;
     transition-duration: 0.5s;
     transition-timing-function: ease-in-out;
     opacity: 0;
   }
 
-  &
-    > .row
-    > .col-md-10
-    > .preview-container
-    > .slides.-current {
+  & > .row > .col-md-10 > .preview-container > .slides >.previews.-current {
     opacity: 1;
   }
 

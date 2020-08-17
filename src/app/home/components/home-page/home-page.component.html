@@ -1,6 +1,18 @@
+<ng-template #movieslide let-slideNumber="slideNumber">
+  <div
+    class="previews"
+    [ngClass]="{
+      '-current': isCurrentSlide(slideNumber)
+    }"
+  >
+    <div class="preview-wrapper" *ngFor="let movie of getMovieSlides(slideNumber)">
+      <app-movie-preview [movie]="movie"></app-movie-preview>
+    </div>
+  </div>
+</ng-template>
+
 <h1 id="on-cinema"><span>On the cinema:</span></h1>
 <hr />
-
 <div class="preview-background">
   <div class="row">
     <div class="col-md-1">
@@ -13,18 +25,12 @@
 
     <div class="col-md-10">
       <div class="preview-container">
-        <div class="slides" *ngFor="let slideNumber of slides"
-        [ngClass]="{
-          '-current': isCurrentSlide(slideNumber)
-        }">
-          <div
-            class="previews"
-            *ngFor="let movie of getMovieSlides(slideNumber); let i = index"
+        <div class="slides" *ngFor="let slideNumber of slides">
+          <ng-container
+            [ngTemplateOutlet]="movieslide"
+            [ngTemplateOutletContext]="{ slideNumber: slideNumber }"
           >
-            <div class="preview-wrapper">
-              <app-movie-preview [movie]="movie"></app-movie-preview>
-            </div>
-          </div>
+          </ng-container>
         </div>
       </div>
     </div>
