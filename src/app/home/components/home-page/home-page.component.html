@@ -13,19 +13,17 @@
 
     <div class="col-md-10">
       <div class="preview-container">
-        <div
-          class="previews"
-          *ngFor="let movie of movies | slice: 0:16; let i = index"
-        >
+        <div class="slides" *ngFor="let slideNumber of slides"
+        [ngClass]="{
+          '-current': isCurrentSlide(slideNumber)
+        }">
           <div
-            class="preview-wrapper"
-            [ngClass]="{
-              '-next': isNextSlide(i),
-              '-current': isCurrentSlide(i),
-              '-back': isBackSlide(i)
-            }"
+            class="previews"
+            *ngFor="let movie of getMovieSlides(slideNumber); let i = index"
           >
-            <app-movie-preview [movie]="movie"></app-movie-preview>
+            <div class="preview-wrapper">
+              <app-movie-preview [movie]="movie"></app-movie-preview>
+            </div>
           </div>
         </div>
       </div>
