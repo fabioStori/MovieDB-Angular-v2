@@ -59,10 +59,10 @@ export class HomePageComponent implements OnInit {
     return true;
   }
 
-  back() {
+  back(): void {
     this.currentSlide--;
   }
-  next() {
+  next(): void {
     this.currentSlide++;
   }
 }
