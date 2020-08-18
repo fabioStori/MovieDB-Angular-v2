@@ -23,31 +23,12 @@ export class HomePageComponent implements OnInit {
   }
 
   isCurrentSlide(slideIndex: number): boolean {
-    switch (this.currentSlide) {
-      case 0: {
-        if (slideIndex === 0) return true;
-        else return false;
-      }
-      case 1: {
-        if (slideIndex === 1) return true;
-        else return false;
-      }
-      case 2: {
-        if (slideIndex === 2) return true;
-        else return false;
-      }
-      case 3: {
-        if (slideIndex === 3) return true;
-        else return false;
-      }
-      case 4: {
-        if (slideIndex === 4) return true;
-        else return false;
-      }
-    }
+    console.log('current');
+    if (this.currentSlide === slideIndex) return true;
+    else return false;
   }
 
-  getMovieSlides(index: number) {
+  getMoviesSlide(index: number) {
     if (index === 0) {
       return this.movies.slice(0, 4);
     } else if (index === 1) {

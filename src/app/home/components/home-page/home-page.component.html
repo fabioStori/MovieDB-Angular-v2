@@ -2,7 +2,7 @@
   <div class="previews" *ngIf="isCurrentSlide(slideNumber)">
     <div
       class="preview-wrapper col-md-3 col-sm-12"
-      *ngFor="let movie of getMovieSlides(slideNumber)"
+      *ngFor="let movie of getMoviesSlide(slideNumber)"
     >
       <app-movie-preview [movie]="movie"></app-movie-preview>
     </div>
