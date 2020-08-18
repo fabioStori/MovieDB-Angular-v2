@@ -22,48 +22,29 @@ export class HomePageComponent implements OnInit {
     });
   }
 
-  isNextSlide(slideIndex: number): boolean {
-    // const columnSize = 3;
-    // const slideColumns = 2;
-    // return (this.currentSlide + slideColumns) * columnSize <= slideIndex;
-    return true;
-  }
-
   isCurrentSlide(slideIndex: number): boolean {
     switch (this.currentSlide) {
       case 0: {
-        if (slideIndex <= 3) return true;
+        if (slideIndex === 0) return true;
         else return false;
       }
       case 1: {
-        if (slideIndex > 3 && slideIndex <= 7) return true;
+        if (slideIndex === 1) return true;
         else return false;
       }
       case 2: {
-        if (slideIndex > 7 && slideIndex <= 11) return true;
+        if (slideIndex === 2) return true;
         else return false;
       }
       case 3: {
-        if (slideIndex > 11 && slideIndex <= 15) return true;
+        if (slideIndex === 3) return true;
         else return false;
       }
       case 4: {
-        if (slideIndex > 15 && slideIndex <= 19) return true;
+        if (slideIndex === 4) return true;
         else return false;
       }
     }
-    // const columnSize = 3;
-    // const slideColumns = 2;
-    // return (
-    //   slideIndex >= this.currentSlide * columnSize &&
-    //   slideIndex < (this.currentSlide + slideColumns) * columnSize
-    // );
-  }
-
-  isBackSlide(slideIndex: number): boolean {
-    // const columnSize = 3;
-    // return this.currentSlide * columnSize > slideIndex;
-    return true;
   }
 
   getMovieSlides(index: number) {
