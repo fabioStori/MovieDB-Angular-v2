@@ -7,16 +7,17 @@
   padding: 0px 20px;
   text-align: center;
 
+
   & .card-body {
     margin: 0 auto;
 
-    &>ul {
+    & > ul {
       text-align: left;
       font-size: medium;
       padding-left: 15px;
     }
 
-    &>.btn {
+    & > .btn {
       text-align: center;
       margin: 0 auto;
       color: white;
