@@ -12,7 +12,7 @@ import { SearchService } from '../../shared/services/search.service';
 @Injectable({
   providedIn: 'root'
 })
-export class HomePageResolver implements Resolve<{}> {
+export class OnTheCinemaResolver implements Resolve<{}> {
   constructor(private search: SearchService) {}
 
   resolve(

@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomePageComponent } from './components/home-page/home-page.component';
-import { HomePageResolver } from './resolvers/home-page.resolver';
+import { OnTheCinemaResolver } from './resolvers/on-the-cinema.resolver';
 
 const routes: Routes = [
   {
     path: '',
     component: HomePageComponent,
-    resolve: { movie: HomePageResolver }
+    resolve: { movie: OnTheCinemaResolver }
   }
 ];
 
