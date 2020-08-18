@@ -1,5 +1,6 @@
 @import '../assets/scss/_mixins';
 @import '../assets/scss/_variables';
+@import '../assets/scss/animations/fade-in.scss';
 
 * {
   box-sizing: border-box;
@@ -27,6 +28,11 @@ body {
   /* height of footer */
 
   section {
+    .col-md-12 {
+      //global fade-in
+      animation: fadeIn;
+      animation-duration: 1s;
+    }
     width: 80%;
     margin: 0 auto;
     padding-top: 20px;

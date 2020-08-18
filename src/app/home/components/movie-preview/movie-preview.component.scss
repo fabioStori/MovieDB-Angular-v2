@@ -1,11 +1,18 @@
 .poster-trailer-card {
-  &>.card {
+  & > .card {
     width: 250px;
     height: 300px;
     border-radius: 20px;
+    margin: 0 auto;
 
+    &:hover {
+      transition-property: all;
+      transition-duration: 0.2s;
+      transition-timing-function: ease-in-out;
+      border: $textBlue 2px groove;
+    }
 
-    &>.card-img-top {
+    & > .card-img-top {
       border-radius: 20px;
       height: 150px;
       width: 240px;
@@ -13,19 +20,19 @@
       margin-top: 3px;
     }
 
-    &>.trailer-wrapper {
+    & > .trailer-wrapper {
       border-radius: 20px;
       height: 150px;
       width: 240px;
       margin: 0 auto;
       margin-top: 3px;
-      &>.alert-danger{
+      & > .alert-danger {
         margin-top: 20px;
       }
     }
 
-    &>.card-body {
-      &>.btn {
+    & > .card-body {
+      & > .btn {
         background-color: $textBlue;
         font-size: small;
         color: white;

@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="col-xs-12">
+  <div class="col-md-12">
     <div class="row">
       <div class="col-md-4">
         <div class="card text-center movie-title">
@@ -20,8 +20,13 @@
             <h3>Vote Average:</h3>
             <div class="card-text">{{ movie['vote_average'] }} / 10</div>
             <div class="progress">
-              <div class="progress-bar bg-success" role="progressbar" style="width: {{ voteAverage }}%"
-                aria-valuemin="0" aria-valuemax="100"></div>
+              <div
+                class="progress-bar bg-success"
+                role="progressbar"
+                style="width: {{ voteAverage }}%"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              ></div>
             </div>
           </div>
           <div class="card-body">
@@ -33,15 +38,24 @@
         </div>
       </div>
       <div class="col-md-4">
-        <div *ngIf="collectionPosterUrl" class="card text-center collection-info">
+        <div
+          *ngIf="collectionPosterUrl"
+          class="card text-center collection-info"
+        >
           <div class="card-header">
             <h2>This movie belongs to the following collection:</h2>
             <h4>{{ movie['belongs_to_collection']['name'] }}</h4>
-            <hr>
-            <img class="img-fluid card-img-middle" [src]="collectionPosterUrl" />
+            <hr />
+            <img
+              class="img-fluid card-img-middle"
+              [src]="collectionPosterUrl"
+            />
           </div>
         </div>
-        <div *ngIf="!collectionPosterUrl" class="card text-center collection-info">
+        <div
+          *ngIf="!collectionPosterUrl"
+          class="card text-center collection-info"
+        >
           <div class="card-header">
             <h2>This movie does not belong to any collection.</h2>
           </div>
@@ -49,10 +63,12 @@
         <div class="card text-center companies-info">
           <div class="card-header">
             <h2>Made by:</h2>
-            <div *ngFor="
+            <div
+              *ngFor="
                 let companie of movie['production_companies'];
                 let i = index
-              ">
+              "
+            >
               <h4>
                 {{ companie['name'] }}
               </h4>
