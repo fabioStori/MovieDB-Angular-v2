@@ -1,11 +1,9 @@
 <ng-template #movieslide let-slideNumber="slideNumber">
-  <div
-    class="previews"
-    [ngClass]="{
-      '-current': isCurrentSlide(slideNumber)
-    }"
-  >
-    <div class="preview-wrapper" *ngFor="let movie of getMovieSlides(slideNumber)">
+  <div class="previews" *ngIf="isCurrentSlide(slideNumber)">
+    <div
+      class="preview-wrapper col-md-3"
+      *ngFor="let movie of getMovieSlides(slideNumber)"
+    >
       <app-movie-preview [movie]="movie"></app-movie-preview>
     </div>
   </div>
